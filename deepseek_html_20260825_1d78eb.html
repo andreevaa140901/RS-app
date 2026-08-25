@@ -64,13 +64,7 @@
       border-radius: 2px;
     }
 
-    .app-container { 
-      max-width: 480px; 
-      margin: 0 auto; 
-      min-height: 100vh; 
-      background: transparent; 
-      position: relative; 
-    }
+    .app-container { max-width: 480px; margin: 0 auto; min-height: 100vh; background: transparent; position: relative; }
 
     .app-header {
       background: var(--glass);
@@ -86,25 +80,9 @@
       align-items: center;
     }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-img {
-      height: 50px;
-      width: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 0 10px rgba(245,166,35,0.3));
-    }
-
-    .logo-subtitle {
-      font-size: 0.65rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      text-transform: none;
-    }
+    .logo-container { display: flex; align-items: center; gap: 10px; }
+    .logo-img { height: 50px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(245,166,35,0.3)); }
+    .logo-subtitle { font-size: 0.65rem; color: var(--text-secondary); font-weight: 500; text-transform: none; }
 
     .logout-btn {
       background: rgba(239,68,68,0.1);
@@ -117,11 +95,6 @@
       font-weight: 600;
       transition: all 0.3s ease;
       text-transform: uppercase;
-    }
-
-    .logout-btn:hover {
-      background: rgba(239,68,68,0.2);
-      border-color: var(--danger);
     }
 
     .app-content { padding: 20px; padding-bottom: 100px; }
@@ -164,11 +137,7 @@
       position: relative;
     }
 
-    .nav-item.active { 
-      color: var(--accent); 
-      background: rgba(245,166,35,0.1);
-    }
-
+    .nav-item.active { color: var(--accent); background: rgba(245,166,35,0.1); }
     .nav-item.active::after {
       content: '';
       position: absolute;
@@ -180,7 +149,6 @@
       background: var(--accent-gradient);
       border-radius: 2px;
     }
-
     .nav-item .nav-icon { font-size: 1.3rem; }
 
     .btn {
@@ -202,14 +170,7 @@
     }
 
     .btn:active { transform: scale(0.97); }
-
-    .btn-primary {
-      background: var(--accent-gradient);
-      color: #000;
-      font-weight: 800;
-      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
-    }
-
+    .btn-primary { background: var(--accent-gradient); color: #000; font-weight: 800; box-shadow: 0 4px 20px rgba(245,166,35,0.4); }
     .btn-primary::after {
       content: '';
       position: absolute;
@@ -227,32 +188,12 @@
       100% { transform: translateX(100%) rotate(45deg); }
     }
 
-    .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(245,166,35,0.5);
-      color: var(--accent);
-    }
-
-    .btn-outline:hover {
-      background: rgba(245,166,35,0.1);
-      border-color: var(--accent);
-    }
-
-    .btn-danger {
-      background: var(--danger);
-      color: #fff;
-    }
+    .btn-outline { background: transparent; border: 1px solid rgba(245,166,35,0.5); color: var(--accent); }
+    .btn-outline:hover { background: rgba(245,166,35,0.1); border-color: var(--accent); }
+    .btn-danger { background: var(--danger); color: #fff; }
 
     .input-group { margin-bottom: 15px; }
-    .input-group label { 
-      display: block; 
-      margin-bottom: 5px; 
-      font-size: 0.75rem; 
-      color: var(--text-secondary); 
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
+    .input-group label { display: block; margin-bottom: 5px; font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; }
 
     .input-field {
       width: 100%;
@@ -266,11 +207,20 @@
       transition: all 0.3s ease;
     }
 
-    .input-field:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
+    .input-field:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(245,166,35,0.1); }
+
+    select.input-field {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23F5A623' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      padding-right: 40px;
+      cursor: pointer;
     }
+
+    select.input-field option { background: #12121a; color: #ffffff; padding: 12px; font-family: 'Inter', sans-serif; }
 
     .card {
       background: linear-gradient(145deg, #12121a 0%, #1a1a2e 100%);
@@ -295,15 +245,8 @@
       transition: opacity 0.3s ease;
     }
 
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateX(5px);
-      box-shadow: 0 8px 25px rgba(245, 166, 35, 0.15);
-    }
+    .card:hover::before { opacity: 1; }
+    .card:hover { border-color: var(--accent); transform: translateX(5px); box-shadow: 0 8px 25px rgba(245, 166, 35, 0.15); }
 
     .tag {
       display: inline-block;
@@ -323,87 +266,24 @@
     .screen { display: none; }
     .screen.active { display: block; }
 
-    .client-screen {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+    .client-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .client-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 40px 30px; width: 100%; max-width: 400px; box-shadow: var(--shadow); text-align: center; }
+    .client-logo { max-width: 200px; height: auto; margin: 0 auto 20px; display: block; filter: drop-shadow(0 0 20px rgba(245,166,35,0.4)); }
+    .client-card p { color: var(--text-secondary); text-align: center; margin-bottom: 30px; font-size: 0.9rem; text-transform: none; }
 
-    .client-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 40px 30px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .client-logo {
-      max-width: 200px;
-      height: auto;
-      margin: 0 auto 20px;
-      display: block;
-      filter: drop-shadow(0 0 20px rgba(245,166,35,0.4));
-    }
-
-    .client-card p { 
-      color: var(--text-secondary); 
-      text-align: center; 
-      margin-bottom: 30px; 
-      font-size: 0.9rem;
-      text-transform: none;
-    }
-
-    .staff-login-btn {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 0.6rem;
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity 0.3s ease;
-    }
-
+    .staff-login-btn { position: absolute; bottom: 20px; right: 20px; background: none; border: none; color: var(--text-secondary); font-size: 0.6rem; cursor: pointer; opacity: 0.5; transition: opacity 0.3s ease; }
     .staff-login-btn:hover { opacity: 1; }
 
-    .staff-login-screen {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .staff-login-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 30px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: var(--shadow);
-    }
-
+    .staff-login-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .staff-login-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 30px; width: 100%; max-width: 400px; box-shadow: var(--shadow); }
     .staff-login-card h2 { color: var(--accent); text-align: center; margin-bottom: 20px; }
 
-    .car-brand-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
+    .car-brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; max-height: 400px; overflow-y: auto; padding: 5px; }
 
     .car-brand-btn {
       padding: 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      background: linear-gradient(145deg, #12121a 0%, #1a1a2e 100%);
+      border: 1px solid rgba(245, 166, 35, 0.2);
       border-radius: 14px;
       cursor: pointer;
       text-align: center;
@@ -412,50 +292,35 @@
       color: var(--text);
       transition: all 0.3s ease;
       font-weight: 500;
+      letter-spacing: 0.02em;
     }
 
-    .car-brand-btn:hover {
-      border-color: var(--accent);
-      background: rgba(245,166,35,0.1);
-      transform: translateY(-2px);
-    }
+    .car-brand-btn:hover { border-color: var(--accent); background: rgba(245,166,35,0.1); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245, 166, 35, 0.15); }
 
     .car-model-item {
       padding: 14px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      background: linear-gradient(145deg, #12121a 0%, #1a1a2e 100%);
+      border: 1px solid rgba(245, 166, 35, 0.2);
       border-radius: 12px;
       margin-bottom: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      font-size: 0.9rem;
     }
 
-    .car-model-item:hover {
-      border-color: var(--accent);
-      background: rgba(245,166,35,0.05);
-    }
+    .car-model-item:hover { border-color: var(--accent); background: rgba(245,166,35,0.1); transform: translateX(5px); box-shadow: 0 4px 15px rgba(245, 166, 35, 0.1); }
+    .car-model-list { max-height: 400px; overflow-y: auto; margin-bottom: 15px; padding: 5px; }
+    .car-model-list::-webkit-scrollbar, .car-brand-grid::-webkit-scrollbar { width: 6px; }
+    .car-model-list::-webkit-scrollbar-track, .car-brand-grid::-webkit-scrollbar-track { background: var(--bg-card); border-radius: 3px; }
+    .car-model-list::-webkit-scrollbar-thumb, .car-brand-grid::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
     .empty-state { text-align: center; padding: 40px 20px; color: var(--text-secondary); }
     .empty-state .icon { font-size: 3rem; margin-bottom: 15px; display: block; }
 
-    .time-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .time-slot {
-      padding: 12px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      cursor: pointer;
-      text-align: center;
-      font-size: 0.7rem;
-      transition: all 0.3s ease;
-    }
-
+    .time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+    .time-slot { padding: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; text-align: center; font-size: 0.7rem; transition: all 0.3s ease; }
     .time-slot.available { border-color: rgba(16,185,129,0.5); color: var(--success); }
     .time-slot.available:hover { background: rgba(16,185,129,0.1); border-color: var(--success); }
     .time-slot.booked { border-color: rgba(239,68,68,0.5); color: var(--danger); opacity: 0.5; cursor: not-allowed; }
@@ -477,17 +342,40 @@
     }
 
     .modal.active { display: flex; }
-
-    .modal-content {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 25px;
-      width: 90%;
-      max-width: 400px;
-      max-height: 80vh;
-      overflow-y: auto;
+    .modal-content { 
+      background: var(--bg-card); 
+      border: 1px solid var(--border); 
+      border-radius: 24px; 
+      padding: 25px; 
+      width: 90%; 
+      max-width: 400px; 
+      max-height: 80vh; 
+      overflow-y: auto; 
       box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: var(--danger);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(239,68,68,0.2);
+      border-color: var(--danger);
     }
 
     .custom-notification {
@@ -512,32 +400,10 @@
       to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     }
 
-    .notification-icon {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      display: block;
-      animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
-    .notification-title {
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-bottom: 10px;
-      font-weight: 800;
-    }
-
-    .notification-text {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 25px;
-      line-height: 1.5;
-      text-transform: none;
-    }
+    .notification-icon { font-size: 4rem; margin-bottom: 20px; display: block; animation: pulse 1s infinite; }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    .notification-title { font-size: 1.5rem; color: var(--accent); margin-bottom: 10px; font-weight: 800; }
+    .notification-text { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 25px; line-height: 1.5; text-transform: none; }
 
     .box-header {
       background: var(--accent-gradient);
@@ -569,6 +435,7 @@
       padding: 8px;
       font-size: 0.65rem;
       position: relative;
+      cursor: pointer;
     }
 
     .selected-service-item {
@@ -595,7 +462,6 @@
 </head>
 <body>
   <div class="app-container">
-    <!-- ГЛАВНЫЙ ЭКРАН КЛИЕНТА -->
     <div class="client-screen" id="clientMainScreen">
       <div class="client-card">
         <img src="https://raw.githubusercontent.com/andreevaa140901/RS-Detailing/8faf159113264b9552d5d59dd575d79216e1073c/IMG_8688-removebg-preview.png" 
@@ -611,7 +477,6 @@
       <button class="staff-login-btn" onclick="showStaffLogin()">Вход для персонала</button>
     </div>
 
-    <!-- ЭКРАН ВХОДА ДЛЯ ПЕРСОНАЛА -->
     <div class="staff-login-screen" id="staffLoginScreen" style="display: none;">
       <div class="staff-login-card">
         <h2>Вход для персонала</h2>
@@ -624,7 +489,6 @@
       </div>
     </div>
 
-    <!-- ОСНОВНОЙ ЭКРАН -->
     <div id="mainApp" style="display: none;">
       <div class="app-header">
         <div class="logo-container">
@@ -661,6 +525,7 @@
     let currentCar = null;
     let selectedTime = null;
     let selectedServices = [];
+    let currentAdmin = null;
 
     // ПОЛНЫЙ СПИСОК УСЛУГ
     const allServices = [
@@ -744,6 +609,14 @@
           'кроссовер': ['Macan', 'Macan Turbo'],
           'джип': ['Cayenne', 'Cayenne Coupe', 'Cayenne Turbo'],
           'микроавтобус': []
+        }
+      },
+      'Opel': {
+        models: {
+          'легковая': ['Astra', 'Corsa', 'Insignia', 'Vectra', 'Zafira'],
+          'кроссовер': ['Antara', 'Crossland', 'Grandland', 'Mokka'],
+          'джип': ['Antara', 'Frontera', 'Monterey'],
+          'микроавтобус': ['Vivaro', 'Movano']
         }
       },
       'Kia': {
@@ -906,14 +779,6 @@
           'микроавтобус': []
         }
       },
-      'Nio': {
-        models: {
-          'легковая': ['ET5', 'ET7', 'ET9'],
-          'кроссовер': ['ES6', 'EC6'],
-          'джип': ['ES7', 'ES8', 'EC7'],
-          'микроавтобус': []
-        }
-      },
       'Tank': {
         models: {
           'легковая': ['300'],
@@ -974,13 +839,13 @@
 
     function initDB() {
       DB.staff = [
-        { id: 1, name: 'Кайрат', role: 'washer' },
-        { id: 2, name: 'Саша', role: 'washer' },
-        { id: 3, name: 'Даниил', role: 'washer' },
-        { id: 4, name: 'Руслан', role: 'washer' },
-        { id: 5, name: 'Ян', role: 'washer' },
-        { id: 6, name: 'Армен', role: 'washer' },
-        { id: 7, name: 'Егор', role: 'washer' }
+        { id: 1, name: 'Кайрат', role: 'detailer' },
+        { id: 2, name: 'Саша', role: 'detailer' },
+        { id: 3, name: 'Даниил', role: 'detailer' },
+        { id: 4, name: 'Руслан', role: 'detailer' },
+        { id: 5, name: 'Ян', role: 'detailer' },
+        { id: 6, name: 'Армен', role: 'detailer' },
+        { id: 7, name: 'Егор', role: 'detailer' }
       ];
 
       DB.services = allServices;
@@ -999,20 +864,31 @@
     }
 
     function loadDB() {
-      const saved = localStorage.getItem('rs_detailing_v11');
+      const saved = localStorage.getItem('rs_detailing_v12');
       if (saved) {
         try {
           DB = JSON.parse(saved);
           if (!DB.services || DB.services.length === 0) DB.services = allServices;
           if (!DB.staff || DB.staff.length === 0) {
             DB.staff = [
-              { id: 1, name: 'Кайрат', role: 'washer' },
-              { id: 2, name: 'Саша', role: 'washer' },
-              { id: 3, name: 'Даниил', role: 'washer' },
-              { id: 4, name: 'Руслан', role: 'washer' },
-              { id: 5, name: 'Ян', role: 'washer' },
-              { id: 6, name: 'Армен', role: 'washer' },
-              { id: 7, name: 'Егор', role: 'washer' }
+              { id: 1, name: 'Кайрат', role: 'detailer' },
+              { id: 2, name: 'Саша', role: 'detailer' },
+              { id: 3, name: 'Даниил', role: 'detailer' },
+              { id: 4, name: 'Руслан', role: 'detailer' },
+              { id: 5, name: 'Ян', role: 'detailer' },
+              { id: 6, name: 'Армен', role: 'detailer' },
+              { id: 7, name: 'Егор', role: 'detailer' }
+            ];
+          }
+          if (!DB.inventory || DB.inventory.length === 0) {
+            DB.inventory = [
+              { id: 1, name: 'Дозатрон Shine', stock: 5000, unit: 'мл', min_stock: 1000 },
+              { id: 2, name: 'CherryBoom', stock: 3000, unit: 'мл', min_stock: 500 },
+              { id: 3, name: 'Очиститель стекол', stock: 2000, unit: 'мл', min_stock: 300 },
+              { id: 4, name: 'Multi Cleaner', stock: 1500, unit: 'мл', min_stock: 300 },
+              { id: 5, name: 'Чернитель BlackStar', stock: 1000, unit: 'мл', min_stock: 200 },
+              { id: 6, name: 'Лист под ноги', stock: 500, unit: 'шт', min_stock: 50 },
+              { id: 7, name: 'Парфюм Krytex', stock: 100, unit: 'мл', min_stock: 20 }
             ];
           }
         } catch(e) { initDB(); }
@@ -1020,7 +896,8 @@
     }
 
     function saveDB() {
-      localStorage.setItem('rs_detailing_v11', JSON.stringify(DB));
+      localStorage.setItem('rs_detailing_v12', JSON.stringify(DB));
+      localStorage.setItem('rs_detailing_backup_v12', JSON.stringify(DB));
     }
 
     function showNotification(title, text, icon = '✅') {
@@ -1054,6 +931,88 @@
       input.value = formatted;
     }
 
+    // ============ СИСТЕМА ЛОЯЛЬНОСТИ ============
+    function calculateClientDiscount(client) {
+      const totalSpent = client.total_spent || 0;
+      return totalSpent >= 25000 ? 5 : 0;
+    }
+
+    function updateClientTotalSpent(clientId) {
+      const client = DB.clients.find(c => c.id === clientId);
+      if (!client) return;
+      
+      const completedBookings = DB.bookings.filter(b => 
+        b.client_id === clientId && 
+        b.status === 'completed'
+      );
+      
+      client.total_spent = completedBookings.reduce((sum, b) => {
+        return sum + (b.final_price || b.price || 0);
+      }, 0);
+      
+      saveDB();
+    }
+
+    function getServiceNames(booking) {
+      return (booking.service_ids || [booking.service_id]).map(id => {
+        const service = DB.services.find(s => s.id === id);
+        return service ? service.name : 'Услуга';
+      }).join(', ');
+    }
+
+    function getBookingDuration(booking) {
+      let totalDuration = 0;
+      
+      (booking.service_ids || [booking.service_id]).forEach(serviceId => {
+        const service = DB.services.find(s => s.id === serviceId);
+        if (service) {
+          totalDuration += service.duration || 30;
+        }
+      });
+      
+      return totalDuration || 30;
+    }
+
+    function isTimeSlotAvailable(date, time, duration, excludeBookingId = null) {
+      const [hours, minutes] = time.split(':').map(Number);
+      const startMinutes = hours * 60 + minutes;
+      const endMinutes = startMinutes + duration;
+      
+      const bookings = DB.bookings.filter(b => 
+        b.date === date && 
+        b.status !== 'cancelled' && 
+        b.status !== 'no_show' &&
+        b.id !== excludeBookingId
+      );
+      
+      for (const booking of bookings) {
+        const [bHours, bMinutes] = booking.time.split(':').map(Number);
+        const bStartMinutes = bHours * 60 + bMinutes;
+        const bookingDuration = getBookingDuration(booking);
+        const bEndMinutes = bStartMinutes + bookingDuration;
+        
+        if (startMinutes < bEndMinutes && endMinutes > bStartMinutes) {
+          return false;
+        }
+      }
+      
+      return true;
+    }
+
+    function updateAllData() {
+      saveDB();
+      
+      if (currentUser) {
+        if (currentUser.role === 'admin') {
+          loadAdminBookings();
+          loadSalaryForAdmin();
+        } else if (currentUser.role === 'manager') {
+          loadManagerSchedule();
+          loadSalary();
+        }
+      }
+    }
+
     // НАВИГАЦИЯ
     function showStaffLogin() {
       document.getElementById('clientMainScreen').style.display = 'none';
@@ -1069,14 +1028,39 @@
     function staffLogin() {
       const password = document.getElementById('staffPassword').value;
       if (password === '0110') {
-        currentUser = { role: 'admin', name: 'Администратор' };
-        enterApp();
+        showAdminSelection();
       } else if (password === '1409') {
         currentUser = { role: 'manager', name: 'Руководитель' };
         enterApp();
       } else {
         alert('Неверный код');
       }
+    }
+
+    function showAdminSelection() {
+      const modal = document.getElementById('modal');
+      modal.innerHTML = `
+        <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
+          <h3 style="color:var(--accent);margin-bottom:20px;">Выберите админа</h3>
+          <p style="color:var(--text-secondary);margin-bottom:20px;">Кто сегодня работает администратором?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            ${DB.staff.map(staff => `
+              <button class="btn btn-outline" style="width:auto;padding:12px 20px;" onclick="selectAdmin('${staff.name}', ${staff.id})">
+                ${staff.name}
+              </button>
+            `).join('')}
+          </div>
+          <button class="btn btn-outline" style="margin-top:20px;" onclick="closeModal()">Отмена</button>
+        </div>`;
+      modal.classList.add('active');
+    }
+
+    function selectAdmin(name, staffId) {
+      currentAdmin = { name: name, id: staffId };
+      currentUser = { role: 'admin', name: `Админ: ${name}` };
+      closeModal();
+      enterApp();
     }
 
     function enterApp() {
@@ -1100,6 +1084,7 @@
       currentCar = null;
       selectedTime = null;
       selectedServices = [];
+      currentAdmin = null;
       document.getElementById('mainApp').style.display = 'none';
       document.getElementById('clientMainScreen').style.display = 'flex';
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1182,7 +1167,7 @@
       const phone = phoneInput.value.replace(/\D/g, '');
       if (phone.length < 11) { alert('Введите корректный номер'); return; }
       
-      const client = DB.clients.find(c => c.phone.replace(/\D/g, '') === phone);
+      const client = DB.clients.find(c => (c.phone || '').replace(/\D/g, '') === phone);
       if (client) {
         currentClient = client;
         showClientCars();
@@ -1207,7 +1192,7 @@
       
       if (!name) { alert('Введите имя'); return; }
       
-      currentClient = { id: Date.now(), name: name, phone: '+7' + phone.substring(1), discount_type: null, discount_percent: 0 };
+      currentClient = { id: Date.now(), name: name, phone: '+7' + phone.substring(1), total_spent: 0 };
       DB.clients.push(currentClient);
       saveDB();
       showCarBrandSelection();
@@ -1245,19 +1230,45 @@
 
     function selectBrand(brand) {
       const brandData = carDatabase[brand];
-      let html = `<h2>${brand}</h2><p style="color:var(--text-secondary);margin-bottom:10px;">Выберите модель</p><div class="car-model-list" style="max-height:400px;overflow-y:auto;">`;
+      let html = `<h2>${brand}</h2>
+        <p style="color:var(--text-secondary);margin-bottom:15px;">Выберите модель или введите вручную</p>
+        <div class="input-group" style="margin-bottom:15px;">
+          <input type="text" class="input-field" id="manualModelInput" placeholder="Введите модель вручную">
+          <button class="btn btn-outline" style="margin-top:10px;" onclick="selectManualModel('${brand}')">Использовать эту модель</button>
+        </div>
+        <div class="car-model-list">`;
       
       ['легковая', 'кроссовер', 'джип', 'микроавтобус'].forEach(bodyType => {
         if (brandData.models[bodyType] && brandData.models[bodyType].length > 0) {
+          html += `<div style="margin:15px 0 10px;"><span class="tag tag-yellow">${bodyType}</span></div>`;
           brandData.models[bodyType].forEach(model => {
             html += `<div class="car-model-item" onclick="selectModel('${brand}', '${model}', '${bodyType}')">${model}</div>`;
           });
         }
       });
       
-      html += '</div>';
-      html += '<button class="btn btn-outline" onclick="showCarBrandSelection()">← Назад</button>';
+      html += '</div><button class="btn btn-outline" onclick="showCarBrandSelection()">← Назад</button>';
       document.getElementById('clientBookingScreen').innerHTML = html;
+    }
+
+    function selectManualModel(brand) {
+      const modelInput = document.getElementById('manualModelInput');
+      const model = modelInput.value.trim();
+      
+      if (!model) {
+        alert('Введите название модели');
+        return;
+      }
+      
+      // Определяем тип кузова
+      const bodyType = prompt('Выберите тип кузова:\n1 - Легковая\n2 - Кроссовер\n3 - Джип\n4 - Микроавтобус', '1');
+      
+      let selectedBodyType = 'легковая';
+      if (bodyType === '2') selectedBodyType = 'кроссовер';
+      else if (bodyType === '3') selectedBodyType = 'джип';
+      else if (bodyType === '4') selectedBodyType = 'микроавтобус';
+      
+      selectModel(brand, model, selectedBodyType);
     }
 
     function selectModel(brand, model, bodyType) {
@@ -1351,6 +1362,11 @@
         totalDuration += service.duration;
       });
       
+      // Применяем скидку
+      const discountPercent = calculateClientDiscount(currentClient);
+      const discountAmount = discountPercent > 0 ? Math.round(totalPrice * discountPercent / 100) : 0;
+      const finalPrice = totalPrice - discountAmount;
+      
       const dates = [];
       const today = new Date();
       for (let i = 0; i < 7; i++) {
@@ -1359,28 +1375,17 @@
         const dateStr = date.toISOString().split('T')[0];
         const dayNames = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
         const monthNames = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
-        dates.push({
-          value: dateStr,
-          day: date.getDate(),
-          dayName: dayNames[date.getDay()],
-          month: monthNames[date.getMonth()]
-        });
+        dates.push({ value: dateStr, day: date.getDate(), dayName: dayNames[date.getDay()], month: monthNames[date.getMonth()] });
       }
       
-      let html = `<h2>Выберите дату</h2>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;">`;
+      let html = `<h2>Выберите дату</h2><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;">`;
       
       dates.forEach((date, index) => {
         const isToday = index === 0;
         html += `<div class="date-card" onclick="selectDate('${date.value}', this)" style="
-          padding:12px;
-          background:${isToday ? 'rgba(245,166,35,0.1)' : 'var(--bg-card)'};
+          padding:12px;background:${isToday ? 'rgba(245,166,35,0.1)' : 'var(--bg-card)'};
           border:${isToday ? '2px solid var(--accent)' : '1px solid var(--border)'};
-          border-radius:12px;
-          cursor:pointer;
-          text-align:center;
-          transition:all 0.3s ease;
-        ">
+          border-radius:12px;cursor:pointer;text-align:center;transition:all 0.3s ease;">
           <div style="font-size:0.6rem;color:var(--text-secondary);text-transform:uppercase;">${isToday ? 'Сегодня' : date.dayName}</div>
           <div style="font-size:1.3rem;font-weight:700;color:var(--accent);">${date.day}</div>
           <div style="font-size:0.6rem;color:var(--text-secondary);">${date.month}</div>
@@ -1392,19 +1397,21 @@
           <h3 style="font-size:1rem;margin-bottom:10px;">Выберите время</h3>
           <div id="timeSlots" class="time-grid"></div>
         </div>
-        
         <div class="card" style="background:rgba(245,166,35,0.05);margin-top:20px;">
-          <div style="display:flex;justify-content:space-between;">
-            <span>Итого:</span>
-            <span style="color:var(--accent);font-weight:700;font-size:1.2rem;">${totalPrice.toLocaleString()} ₽</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;margin-top:10px;">
-            <span style="color:var(--text-secondary);">Длительность:</span>
-            <span style="color:var(--text-secondary);">~${totalDuration} мин</span>
-          </div>
+          <div style="display:flex;justify-content:space-between;"><span>Итого:</span><span style="color:var(--accent);font-weight:700;font-size:1.2rem;">${totalPrice.toLocaleString()} ₽</span></div>
+          ${discountPercent > 0 ? `
+            <div style="display:flex;justify-content:space-between;margin-top:10px;">
+              <span style="color:var(--success);">Скидка ${discountPercent}%:</span>
+              <span style="color:var(--success);">-${discountAmount.toLocaleString()} ₽</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:10px;">
+              <span style="font-weight:700;">К оплате:</span>
+              <span style="color:var(--accent);font-weight:700;font-size:1.3rem;">${finalPrice.toLocaleString()} ₽</span>
+            </div>
+          ` : ''}
+          <div style="display:flex;justify-content:space-between;margin-top:10px;"><span style="color:var(--text-secondary);">Длительность:</span><span style="color:var(--text-secondary);">~${totalDuration} мин</span></div>
         </div>
-        
-        <button class="btn btn-primary" onclick="confirmBooking(${totalPrice})" style="margin-top:20px;" disabled id="confirmBookingBtn">Подтвердить запись</button>`;
+        <button class="btn btn-primary" onclick="confirmBooking(${totalPrice}, ${discountPercent}, ${discountAmount}, ${finalPrice})" style="margin-top:20px;" disabled id="confirmBookingBtn">Подтвердить запись</button>`;
       
       document.getElementById('clientBookingScreen').innerHTML = html;
       window.selectedDate = null;
@@ -1415,10 +1422,8 @@
         card.style.background = 'var(--bg-card)';
         card.style.border = '1px solid var(--border)';
       });
-      
       element.style.background = 'rgba(245,166,35,0.1)';
       element.style.border = '2px solid var(--accent)';
-      
       window.selectedDate = date;
       document.getElementById('timeSlotsContainer').style.display = 'block';
       loadAvailableTimesForDate(date);
@@ -1431,7 +1436,8 @@
       const currentHour = now.getHours();
       const currentMinute = now.getMinutes();
       
-      const bookedSlots = DB.bookings.filter(b => b.date === date && b.status !== 'cancelled');
+      const totalDuration = selectedServices.reduce((sum, service) => sum + (service.duration || 30), 0);
+      
       let html = '';
       let hasAvailableSlots = false;
       
@@ -1439,16 +1445,15 @@
         const displayHour = hour % 24;
         for (let minute = 0; minute < 60; minute += 10) {
           const timeStr = `${String(displayHour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
-          const isBooked = bookedSlots.some(b => b.time === timeStr);
           
           let isPast = false;
           if (isToday) {
-            if (hour < currentHour || (hour === currentHour && minute <= currentMinute)) {
-              isPast = true;
-            }
+            if (hour < currentHour || (hour === currentHour && minute <= currentMinute)) isPast = true;
           }
           
-          if (!isBooked && !isPast) {
+          const isAvailable = isTimeSlotAvailable(date, timeStr, totalDuration);
+          
+          if (!isPast && isAvailable) {
             hasAvailableSlots = true;
             html += `<div class="time-slot available" onclick="selectTime('${timeStr}')">${timeStr}</div>`;
           }
@@ -1471,7 +1476,7 @@
       document.getElementById('confirmBookingBtn').disabled = false;
     }
 
-    function confirmBooking(totalPrice) {
+    function confirmBooking(totalPrice, discountPercent, discountAmount, finalPrice) {
       if (!window.selectedDate || !window.selectedTime) { alert('Выберите дату и время'); return; }
       
       const booking = {
@@ -1483,6 +1488,10 @@
         time: window.selectedTime,
         phone: currentClient.phone,
         price: totalPrice,
+        discount_applied: discountPercent > 0,
+        discount_percent: discountPercent,
+        discount_amount: discountAmount,
+        final_price: finalPrice,
         status: 'new',
         created_at: new Date().toISOString()
       };
@@ -1491,16 +1500,16 @@
       saveDB();
       localStorage.setItem('client_phone', currentClient.phone);
       
-      showNotification('Запись подтверждена!', `Вы записаны на ${window.selectedDate} в ${window.selectedTime}`, '✅');
+      const message = discountPercent > 0 
+        ? `Вы записаны на ${window.selectedDate} в ${window.selectedTime}. Ваша скидка ${discountPercent}%! Итого: ${finalPrice.toLocaleString()} ₽`
+        : `Вы записаны на ${window.selectedDate} в ${window.selectedTime}. Итого: ${finalPrice.toLocaleString()} ₽`;
       
-      setTimeout(() => {
-        loadBookingFlow();
-      }, 2000);
+      showNotification('Запись подтверждена!', message, '✅');
+      setTimeout(() => { loadBookingFlow(); }, 3000);
     }
 
     function loadClientServices() {
       let html = '<h2>Наши услуги</h2>';
-      
       const categories = {};
       DB.services.forEach(service => {
         if (!categories[service.category]) categories[service.category] = [];
@@ -1509,7 +1518,6 @@
       
       Object.keys(categories).forEach(category => {
         html += `<h3 style="color:var(--accent);margin:25px 0 15px;font-size:1.1rem;">${category}</h3>`;
-        
         categories[category].forEach(service => {
           html += `<div class="card">
             <h4 style="margin-bottom:5px;font-size:0.9rem;text-transform:none;">${service.name}</h4>
@@ -1524,12 +1532,43 @@
 
     function loadClientProfile() {
       const phone = localStorage.getItem('client_phone');
-      const client = DB.clients.find(c => c.phone.replace(/\D/g, '') === (phone || '').replace(/\D/g, ''));
+      const client = DB.clients.find(c => (c.phone || '').replace(/\D/g, '') === (phone || '').replace(/\D/g, ''));
       
       let html = '<h2>Мой профиль</h2>';
       
       if (client) {
-        html += `<div class="card"><h3 style="text-transform:none;">${client.name}</h3><p style="color:var(--text-secondary);">📞 ${client.phone}</p></div>`;
+        const discount = calculateClientDiscount(client);
+        const totalSpent = client.total_spent || 0;
+        const remainingForDiscount = Math.max(25000 - totalSpent, 0);
+        
+        html += `
+          <div class="card" style="border:1px solid var(--accent);">
+            <h3 style="text-transform:none;">${client.name}</h3>
+            <p style="color:var(--text-secondary);">📞 ${client.phone}</p>
+            <div style="margin-top:15px;padding:15px;background:rgba(245,166,35,0.1);border-radius:12px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <p style="font-size:0.8rem;color:var(--text-secondary);">Ваша скидка</p>
+                  <p style="font-size:2rem;color:var(--accent);font-weight:700;">${discount}%</p>
+                </div>
+                <div style="text-align:right;">
+                  <p style="font-size:0.8rem;color:var(--text-secondary);">Потрачено всего</p>
+                  <p style="font-size:1.2rem;color:var(--text);font-weight:700;">${totalSpent.toLocaleString()} ₽</p>
+                </div>
+              </div>
+              ${discount === 0 ? `
+                <div style="margin-top:15px;">
+                  <p style="font-size:0.75rem;color:var(--text-secondary);">До скидки 5% осталось потратить:</p>
+                  <p style="font-size:1rem;color:var(--accent);">${remainingForDiscount.toLocaleString()} ₽</p>
+                  <div style="width:100%;height:8px;background:var(--bg);border-radius:4px;margin-top:8px;overflow:hidden;">
+                    <div style="width:${Math.min((totalSpent / 25000) * 100, 100)}%;height:100%;background:var(--accent-gradient);border-radius:4px;transition:width 0.3s;"></div>
+                  </div>
+                </div>
+              ` : `
+                <p style="font-size:0.8rem;color:var(--success);margin-top:10px;">🎉 У вас максимальная скидка 5%!</p>
+              `}
+            </div>
+          </div>`;
         
         const cars = DB.cars.filter(c => c.client_id === client.id);
         html += '<h3 style="margin:20px 0 10px;font-size:1rem;">Мои автомобили</h3>';
@@ -1546,16 +1585,33 @@
         if (bookings.length === 0) {
           html += '<div class="card"><p style="color:var(--text-secondary);">Нет записей</p></div>';
         } else {
+          bookings.sort((a, b) => new Date(b.date) - new Date(a.date));
           bookings.forEach(booking => {
-            const serviceNames = (booking.service_ids || [booking.service_id]).map(id => {
-              const service = DB.services.find(s => s.id === id);
-              return service ? service.name : 'Услуга';
-            }).join(', ');
+            const serviceNames = getServiceNames(booking);
+            
+            let statusText = 'Ожидает';
+            let statusClass = 'tag-yellow';
+            if (booking.status === 'completed') {
+              statusText = 'Выполнено';
+              statusClass = 'tag-green';
+            } else if (booking.status === 'cancelled') {
+              statusText = 'Отменено';
+              statusClass = 'tag-red';
+            } else if (booking.status === 'no_show') {
+              statusText = 'Неявка';
+              statusClass = 'tag-red';
+            }
             
             html += `<div class="card">
-              <h4 style="text-transform:none;font-size:0.85rem;">${serviceNames}</h4>
+              <div style="display:flex;justify-content:space-between;">
+                <h4 style="text-transform:none;font-size:0.85rem;">${serviceNames}</h4>
+                <span class="tag ${statusClass}">${statusText}</span>
+              </div>
               <p style="color:var(--text-secondary);font-size:0.8rem;">📅 ${booking.date} в ${booking.time}</p>
-              <p style="color:var(--accent);">${booking.price.toLocaleString()} ₽</p>
+              ${booking.discount_applied ? `
+                <p style="color:var(--success);font-size:0.8rem;">💰 Скидка: ${booking.discount_percent}% (${booking.discount_amount.toLocaleString()} ₽)</p>
+              ` : ''}
+              <p style="color:var(--accent);">${(booking.final_price || booking.price).toLocaleString()} ₽</p>
             </div>`;
           });
         }
@@ -1592,12 +1648,34 @@
     }
 
     function loadBookingsByDate(date, role) {
-      const bookings = DB.bookings.filter(b => b.date === date && b.status !== 'cancelled');
+      const bookings = DB.bookings.filter(b => b.date === date && b.status !== 'cancelled' && b.status !== 'no_show');
       
-      let html = `<h2>График на ${date}</h2>
-        <div style="display:flex;gap:10px;margin-bottom:20px;">
-          <button class="btn btn-outline" style="flex:1;" onclick="${role === 'admin' ? 'loadAdminBookings()' : 'loadManagerSchedule()'}">← Сегодня</button>
-          <input type="date" class="input-field" style="flex:1;" value="${date}" onchange="loadBookingsByDate(this.value, '${role}')">
+      const dates = [];
+      const today = new Date();
+      for (let i = -3; i <= 7; i++) {
+        const d = new Date(today);
+        d.setDate(today.getDate() + i);
+        const dateStr = d.toISOString().split('T')[0];
+        const dayNames = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        const day = d.getDate();
+        const dayName = dayNames[d.getDay()];
+        const isToday = i === 0;
+        const isSelected = dateStr === date;
+        dates.push({ dateStr, day, dayName, isToday, isSelected });
+      }
+      
+      let html = `<h2>График</h2>
+        <div style="display:flex;gap:8px;overflow-x:auto;margin-bottom:20px;padding-bottom:10px;">
+          ${dates.map(d => `
+            <div onclick="loadBookingsByDate('${d.dateStr}', '${role}')" style="
+              min-width:60px;padding:10px;
+              background:${d.isSelected ? 'rgba(245,166,35,0.15)' : d.isToday ? 'rgba(245,166,35,0.05)' : 'var(--bg-card)'};
+              border:${d.isSelected ? '2px solid var(--accent)' : d.isToday ? '1px solid rgba(245,166,35,0.5)' : '1px solid var(--border)'};
+              border-radius:12px;cursor:pointer;text-align:center;transition:all 0.3s ease;">
+              <div style="font-size:0.6rem;color:var(--text-secondary);text-transform:uppercase;">${d.isToday ? 'Сегодня' : d.dayName}</div>
+              <div style="font-size:1.2rem;font-weight:700;color:${d.isSelected ? 'var(--accent)' : 'var(--text)'};">${d.day}</div>
+            </div>
+          `).join('')}
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;">
           <div class="box-header">🏁 Бокс 1</div>
@@ -1609,18 +1687,46 @@
         const displayHour = hour % 24;
         for (let minute = 0; minute < 60; minute += 30) {
           const timeStr = `${String(displayHour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
-          const box1Booking = bookings.find(b => b.time === timeStr && (b.box_number === 1 || !b.box_number));
-          const box2Booking = bookings.find(b => b.time === timeStr && b.box_number === 2);
+          
+          let box1Booking = null;
+          for (const booking of bookings) {
+            if (booking.box_number === 1 || !booking.box_number) {
+              const bookingDuration = getBookingDuration(booking);
+              const [bHours, bMinutes] = booking.time.split(':').map(Number);
+              const bStartMinutes = bHours * 60 + bMinutes;
+              const bEndMinutes = bStartMinutes + bookingDuration;
+              const slotMinutes = hour * 60 + minute;
+              
+              if (slotMinutes >= bStartMinutes && slotMinutes < bEndMinutes) {
+                box1Booking = booking;
+                break;
+              }
+            }
+          }
+          
+          let box2Booking = null;
+          for (const booking of bookings) {
+            if (booking.box_number === 2) {
+              const bookingDuration = getBookingDuration(booking);
+              const [bHours, bMinutes] = booking.time.split(':').map(Number);
+              const bStartMinutes = bHours * 60 + bMinutes;
+              const bEndMinutes = bStartMinutes + bookingDuration;
+              const slotMinutes = hour * 60 + minute;
+              
+              if (slotMinutes >= bStartMinutes && slotMinutes < bEndMinutes) {
+                box2Booking = booking;
+                break;
+              }
+            }
+          }
           
           html += `
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:5px;">
-              <div style="padding:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;min-height:50px;cursor:pointer;position:relative;" 
-                   onclick="addBookingToSlot('${timeStr}', 1, '${date}')">
+              <div style="padding:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;min-height:50px;cursor:pointer;position:relative;" onclick="${box1Booking ? `showBookingActions(${box1Booking.id})` : `addBookingToSlot('${timeStr}', 1, '${date}')`}">
                 <div style="position:absolute;top:-5px;left:5px;font-size:0.6rem;color:var(--text-secondary);">${timeStr}</div>
                 ${box1Booking ? renderBookingInfo(box1Booking) : '<span style="color:var(--text-secondary);font-size:0.7rem;display:block;margin-top:10px;">+ Свободно</span>'}
               </div>
-              <div style="padding:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;min-height:50px;cursor:pointer;position:relative;" 
-                   onclick="addBookingToSlot('${timeStr}', 2, '${date}')">
+              <div style="padding:10px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;min-height:50px;cursor:pointer;position:relative;" onclick="${box2Booking ? `showBookingActions(${box2Booking.id})` : `addBookingToSlot('${timeStr}', 2, '${date}')`}">
                 <div style="position:absolute;top:-5px;left:5px;font-size:0.6rem;color:var(--text-secondary);">${timeStr}</div>
                 ${box2Booking ? renderBookingInfo(box2Booking) : '<span style="color:var(--text-secondary);font-size:0.7rem;display:block;margin-top:10px;">+ Свободно</span>'}
               </div>
@@ -1639,59 +1745,146 @@
       
       const client = DB.clients.find(c => c.id === booking.client_id);
       const car = DB.cars.find(c => c.id === booking.car_id);
-      const serviceNames = (booking.service_ids || [booking.service_id]).map(id => {
-        const service = DB.services.find(s => s.id === id);
-        return service ? service.name : 'Услуга';
-      }).join(', ');
+      const serviceNames = getServiceNames(booking);
       
       const staffNames = booking.staff_ids ? booking.staff_ids.map(id => {
         const staff = DB.staff.find(s => s.id === id);
         return staff ? staff.name : '';
       }).filter(Boolean).join(', ') : '';
       
-      const statusClass = booking.status === 'completed' ? 'tag-green' : 'tag-yellow';
-      const statusText = booking.status === 'completed' ? 'Готово' : 'Запись';
+      let statusClass = 'tag-yellow';
+      let statusText = 'Запись';
+      
+      if (booking.status === 'completed') {
+        statusClass = 'tag-green';
+        statusText = 'Готово';
+      } else if (booking.status === 'no_show') {
+        statusClass = 'tag-red';
+        statusText = 'Неявка';
+      }
       
       return `
         <div class="time-slot-booking">
-          <div style="font-weight:700;color:var(--accent);font-size:0.7rem;">${client ? client.name : booking.phone}</div>
+          <div style="font-weight:700;color:var(--accent);font-size:0.7rem;">${client ? client.name : (booking.phone || 'Клиент')}</div>
           ${car ? `<div style="color:var(--text-secondary);font-size:0.6rem;">${car.brand} ${car.model}</div>` : ''}
           <div style="color:var(--text-secondary);font-size:0.6rem;">${serviceNames}</div>
+          ${booking.discount_applied ? `
+            <div style="color:var(--success);font-size:0.55rem;">💰 ${(booking.final_price || booking.price).toLocaleString()} ₽</div>
+          ` : `
+            <div style="color:var(--accent);font-size:0.6rem;">${(booking.final_price || booking.price).toLocaleString()} ₽</div>
+          `}
           ${staffNames ? `<div style="color:var(--success);font-size:0.55rem;">👥 ${staffNames}</div>` : ''}
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:5px;">
-            <span class="tag ${statusClass}" style="font-size:0.55rem;">${statusText}</span>
-            <div style="display:flex;gap:3px;">
-              ${booking.status !== 'completed' ? `<button class="btn btn-outline" style="padding:2px 5px;font-size:0.5rem;width:auto;margin:0;" onclick="event.stopPropagation();completeBookingWithStaff(${booking.id})">✓</button>` : ''}
-              <button class="btn btn-outline" style="padding:2px 5px;font-size:0.5rem;width:auto;margin:0;" onclick="event.stopPropagation();changeBookingTime(${booking.id})">🕐</button>
-            </div>
-          </div>
+          <span class="tag ${statusClass}" style="font-size:0.55rem;">${statusText}</span>
         </div>
       `;
+    }
+
+    function showBookingActions(bookingId) {
+      const booking = DB.bookings.find(b => b.id === bookingId);
+      if (!booking) return;
+      
+      const client = DB.clients.find(c => c.id === booking.client_id);
+      const car = DB.cars.find(c => c.id === booking.car_id);
+      const serviceNames = getServiceNames(booking);
+      
+      const modal = document.getElementById('modal');
+      modal.innerHTML = `
+        <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
+          <h3 style="color:var(--accent);margin-bottom:20px;">Запись</h3>
+          
+          <div class="card">
+            <h4 style="text-transform:none;font-size:0.9rem;">${client ? client.name : 'Клиент'}</h4>
+            <p style="color:var(--text-secondary);">📞 ${booking.phone || 'Нет телефона'}</p>
+            ${car ? `<p style="color:var(--text-secondary);">🚗 ${car.brand} ${car.model} ${car.plate ? `(${car.plate})` : ''}</p>` : ''}
+            <p style="color:var(--text-secondary);margin-top:10px;">📅 ${booking.date} в ${booking.time}</p>
+            <div style="margin-top:10px;">
+              <p style="font-weight:700;">Услуги:</p>
+              <p style="color:var(--text-secondary);">${serviceNames}</p>
+            </div>
+            ${booking.discount_applied ? `
+              <p style="color:var(--success);margin-top:10px;">💰 Скидка ${booking.discount_percent}%: ${(booking.final_price || booking.price).toLocaleString()} ₽</p>
+            ` : `
+              <p style="color:var(--accent);margin-top:10px;">💰 ${(booking.final_price || booking.price).toLocaleString()} ₽</p>
+            `}
+          </div>
+          
+          ${booking.status !== 'completed' ? `
+            <button class="btn btn-primary" onclick="completeBookingWithStaff(${bookingId})">✓ Отметить выполненной</button>
+          ` : ''}
+          
+          ${booking.status !== 'cancelled' && booking.status !== 'no_show' ? `
+            <button class="btn btn-outline" onclick="markNoShow(${bookingId})">🚫 Отметить неявку</button>
+          ` : ''}
+          
+          <button class="btn btn-danger" onclick="deleteBooking(${bookingId})">🗑️ Удалить запись</button>
+          <button class="btn btn-outline" onclick="closeModal()">Закрыть</button>
+        </div>`;
+      modal.classList.add('active');
+    }
+
+    function markNoShow(bookingId) {
+      if (!confirm('Отметить клиента как неявившегося?')) return;
+      
+      const booking = DB.bookings.find(b => b.id === bookingId);
+      if (booking) {
+        booking.status = 'no_show';
+        booking.no_show_at = new Date().toISOString();
+        saveDB();
+        closeModal();
+        updateAllData();
+        showNotification('Отмечена неявка', 'Клиент не приехал на запись', '🚫');
+      }
+    }
+
+    function deleteBooking(bookingId) {
+      if (!confirm('Удалить эту запись?')) return;
+      
+      DB.bookings = DB.bookings.filter(b => b.id !== bookingId);
+      saveDB();
+      closeModal();
+      updateAllData();
+      showNotification('Запись удалена', 'Запись была успешно удалена', '🗑️');
     }
 
     function completeBookingWithStaff(bookingId) {
       const booking = DB.bookings.find(b => b.id === bookingId);
       if (!booking) return;
       
+      const serviceNames = getServiceNames(booking);
+      const car = DB.cars.find(c => c.id === booking.car_id);
+      
       const modal = document.getElementById('modal');
       modal.innerHTML = `
         <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
           <h3 style="color:var(--accent);margin-bottom:20px;">Отметить выполненной</h3>
+          
           <div class="card">
-            <p style="color:var(--text-secondary);">Время: ${booking.time}</p>
-            <p style="color:var(--text-secondary);">Сумма: ${booking.price.toLocaleString()} ₽</p>
+            <h4 style="text-transform:none;font-size:0.9rem;">Услуги:</h4>
+            <p style="color:var(--text-secondary);">${serviceNames}</p>
+            ${car ? `<p style="color:var(--text-secondary);margin-top:5px;">🚗 ${car.brand} ${car.model}</p>` : ''}
+            <p style="color:var(--text-secondary);margin-top:5px;">Время: ${booking.time}</p>
+            <p style="color:var(--accent);margin-top:5px;">Сумма: ${(booking.final_price || booking.price).toLocaleString()} ₽</p>
           </div>
+          
           <div class="input-group">
-            <label>Выберите детейлеров</label>
+            <label>Выберите детейлеров, работавших над авто</label>
             <div id="staffCheckboxes" style="display:flex;flex-wrap:wrap;gap:10px;">
               ${DB.staff.map(staff => `
-                <label style="display:flex;align-items:center;gap:5px;font-size:0.8rem;">
+                <label style="display:flex;align-items:center;gap:5px;font-size:0.8rem;padding:8px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;cursor:pointer;">
                   <input type="checkbox" value="${staff.id}" class="staff-checkbox">
                   ${staff.name}
                 </label>
               `).join('')}
             </div>
           </div>
+          
+          <div class="input-group">
+            <label>Рекомендации для клиента</label>
+            <textarea class="input-field" id="recommendationInput" rows="3" placeholder="Например: предложить полировку кузова"></textarea>
+          </div>
+          
           <button class="btn btn-primary" onclick="saveCompletedBooking(${bookingId})">Подтвердить</button>
           <button class="btn btn-outline" onclick="closeModal()">Отмена</button>
         </div>`;
@@ -1700,6 +1893,7 @@
 
     function saveCompletedBooking(bookingId) {
       const staffIds = Array.from(document.querySelectorAll('.staff-checkbox:checked')).map(cb => parseInt(cb.value));
+      const recommendationText = document.getElementById('recommendationInput').value.trim();
       
       if (staffIds.length === 0) {
         alert('Выберите хотя бы одного детейлера');
@@ -1711,16 +1905,49 @@
         booking.status = 'completed';
         booking.staff_ids = staffIds;
         booking.completed_at = new Date().toISOString();
-        saveDB();
-        closeModal();
         
-        if (currentUser.role === 'admin') {
-          loadAdminBookings();
-        } else {
-          loadManagerSchedule();
+        // Применяем скидку если ещё не применена
+        if (!booking.discount_applied) {
+          const client = DB.clients.find(c => c.id === booking.client_id);
+          if (client) {
+            const discountPercent = calculateClientDiscount(client);
+            if (discountPercent > 0) {
+              const discountAmount = Math.round(booking.price * discountPercent / 100);
+              booking.discount_applied = true;
+              booking.discount_percent = discountPercent;
+              booking.discount_amount = discountAmount;
+              booking.final_price = booking.price - discountAmount;
+            }
+          }
         }
         
-        showNotification('Запись выполнена!', `${staffIds.length} детейлера(ов) отмечено`, '✅');
+        // Сохраняем рекомендацию
+        if (recommendationText && booking.car_id) {
+          DB.recommendations.push({
+            id: Date.now(),
+            car_id: booking.car_id,
+            text: recommendationText,
+            date: new Date().toISOString().split('T')[0],
+            status: 'active',
+            created_at: new Date().toISOString()
+          });
+        }
+        
+        // Обновляем общую сумму потраченных средств
+        updateClientTotalSpent(booking.client_id);
+        
+        saveDB();
+        closeModal();
+        updateAllData();
+        
+        const client = DB.clients.find(c => c.id === booking.client_id);
+        const newDiscount = calculateClientDiscount(client);
+        
+        showNotification(
+          'Запись выполнена!', 
+          `${staffIds.length} детейлера(ов) отмечено${newDiscount > 0 ? `. Скидка клиента теперь ${newDiscount}%` : ''}`, 
+          '✅'
+        );
       }
     }
 
@@ -1731,6 +1958,7 @@
       const modal = document.getElementById('modal');
       modal.innerHTML = `
         <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
           <h3 style="color:var(--accent);margin-bottom:20px;">Изменить время</h3>
           <div class="card">
             <p style="color:var(--text-secondary);">Текущее время: ${booking.time}</p>
@@ -1749,7 +1977,7 @@
     }
 
     function generateTimeOptions(date, currentTime) {
-      const bookedSlots = DB.bookings.filter(b => b.date === date && b.status !== 'cancelled' && b.time !== currentTime);
+      const bookedSlots = DB.bookings.filter(b => b.date === date && b.status !== 'cancelled' && b.status !== 'no_show' && b.time !== currentTime);
       let options = `<option value="${currentTime}" selected>${currentTime} (текущее)</option>`;
       
       for (let hour = 9; hour <= 25; hour++) {
@@ -1774,13 +2002,7 @@
         booking.time = newTime;
         saveDB();
         closeModal();
-        
-        if (currentUser.role === 'admin') {
-          loadAdminBookings();
-        } else {
-          loadManagerSchedule();
-        }
-        
+        updateAllData();
         showNotification('Время изменено!', `Новое время: ${newTime}`, '✅');
       }
     }
@@ -1789,6 +2011,7 @@
       const modal = document.getElementById('modal');
       modal.innerHTML = `
         <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
           <h3 style="color:var(--accent);margin-bottom:20px;">Запись - ${time} (Бокс ${boxNumber})</h3>
           <div class="input-group"><label>Телефон</label><input type="tel" class="input-field" id="slotPhone" oninput="formatPhone(this)"></div>
           <div class="input-group"><label>Имя клиента</label><input type="text" class="input-field" id="slotClientName"></div>
@@ -1796,21 +2019,51 @@
             <option value="">Выберите марку</option>
             ${Object.keys(carDatabase).map(brand => `<option value="${brand}">${brand}</option>`).join('')}
           </select></div>
-          <div class="input-group"><label>Модель</label><select class="input-field" id="slotModel"><option value="">Сначала выберите марку</option></select></div>
+          <div class="input-group"><label>Модель</label>
+            <select class="input-field" id="slotModel"><option value="">Сначала выберите марку</option></select>
+            <input type="text" class="input-field" id="slotModelManual" placeholder="Или введите модель вручную" style="margin-top:5px;">
+          </div>
           <div class="input-group"><label>Госномер</label><input type="text" class="input-field" id="slotPlate" placeholder="А123ВС"></div>
           <div class="input-group"><label>Услуги</label><div id="slotServices"></div></div>
           <button class="btn btn-primary" onclick="saveSlotBooking('${time}', ${boxNumber}, '${date}')">Сохранить</button>
           <button class="btn btn-outline" onclick="closeModal()">Отмена</button>
         </div>`;
       
-      const servicesContainer = document.getElementById('slotServices');
+      showServiceSelectionForAdmin('slotServices');
+      modal.classList.add('active');
+    }
+
+    function showServiceSelectionForAdmin(containerId) {
+      const container = document.getElementById(containerId);
+      const categories = {};
+      
       DB.services.forEach(service => {
-        servicesContainer.innerHTML += `<label style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
-          <input type="checkbox" value="${service.id}" class="slot-service-checkbox">${service.name}
-        </label>`;
+        if (!categories[service.category]) {
+          categories[service.category] = [];
+        }
+        categories[service.category].push(service);
       });
       
-      modal.classList.add('active');
+      let html = '<div style="max-height:400px;overflow-y:auto;">';
+      
+      Object.keys(categories).forEach(category => {
+        html += `<div style="margin:15px 0 10px;position:sticky;top:0;background:var(--bg-card);z-index:10;padding:5px 0;">
+          <span class="tag tag-yellow">${category}</span>
+        </div>`;
+        
+        categories[category].forEach(service => {
+          html += `<label style="display:flex;align-items:center;gap:5px;margin-bottom:5px;padding:8px;background:rgba(245,166,35,0.05);border-radius:8px;">
+            <input type="checkbox" value="${service.id}" class="slot-service-checkbox">
+            <div>
+              <div>${service.name}</div>
+              <div style="font-size:0.7rem;color:var(--text-secondary);">${service.duration} мин</div>
+            </div>
+          </label>`;
+        });
+      });
+      
+      html += '</div>';
+      container.innerHTML = html;
     }
 
     function updateSlotModels() {
@@ -1822,7 +2075,11 @@
         ['легковая', 'кроссовер', 'джип', 'микроавтобус'].forEach(bodyType => {
           if (carDatabase[brand].models[bodyType]) {
             carDatabase[brand].models[bodyType].forEach(model => {
-              modelSelect.innerHTML += `<option value="${model}" data-body-type="${bodyType}">${model}</option>`;
+              const option = document.createElement('option');
+              option.value = model;
+              option.dataset.bodyType = bodyType;
+              option.textContent = `${model} (${bodyType})`;
+              modelSelect.appendChild(option);
             });
           }
         });
@@ -1833,7 +2090,9 @@
       const phone = document.getElementById('slotPhone').value.replace(/\D/g, '');
       const clientName = document.getElementById('slotClientName').value;
       const brand = document.getElementById('slotBrand').value;
-      const model = document.getElementById('slotModel').value;
+      const modelSelect = document.getElementById('slotModel');
+      const modelManual = document.getElementById('slotModelManual').value.trim();
+      const model = modelSelect.value || modelManual;
       const plate = document.getElementById('slotPlate').value;
       const serviceIds = Array.from(document.querySelectorAll('.slot-service-checkbox:checked')).map(cb => parseInt(cb.value));
       
@@ -1842,24 +2101,42 @@
         return;
       }
       
-      let client = DB.clients.find(c => c.phone.replace(/\D/g, '') === phone);
-      if (!client) {
-        client = { id: Date.now(), name: clientName || 'Клиент', phone: '+7' + phone.substring(1), discount_type: null, discount_percent: 0 };
-        DB.clients.push(client);
+      // Определяем тип кузова
+      let bodyType = 'легковая';
+      if (modelSelect.value) {
+        const selectedOption = modelSelect.options[modelSelect.selectedIndex];
+        bodyType = selectedOption.dataset.bodyType || 'легковая';
+      } else {
+        // Для ручного ввода спрашиваем тип кузова
+        const bodyTypeInput = prompt('Выберите тип кузова:\n1 - Легковая\n2 - Кроссовер\n3 - Джип\n4 - Микроавтобус', '1');
+        if (bodyTypeInput === '2') bodyType = 'кроссовер';
+        else if (bodyTypeInput === '3') bodyType = 'джип';
+        else if (bodyTypeInput === '4') bodyType = 'микроавтобус';
       }
       
-      const modelSelect = document.getElementById('slotModel');
-      const selectedOption = modelSelect.options[modelSelect.selectedIndex];
-      const bodyType = selectedOption.dataset.bodyType || 'легковая';
+      let client = DB.clients.find(c => (c.phone || '').replace(/\D/g, '') === phone);
+      if (!client) {
+        client = { id: Date.now(), name: clientName || 'Клиент', phone: '+7' + phone.substring(1), total_spent: 0 };
+        DB.clients.push(client);
+      }
       
       const car = { id: Date.now(), client_id: client.id, brand: brand, model: model, plate: plate, body_type: bodyType, is_frequent: true };
       DB.cars.push(car);
       
       let totalPrice = 0;
+      let totalDuration = 0;
       serviceIds.forEach(serviceId => {
         const service = DB.services.find(s => s.id === serviceId);
-        if (service) totalPrice += service[bodyType] || service.легковая;
+        if (service) {
+          totalPrice += service[bodyType] || service.легковая;
+          totalDuration += service.duration || 30;
+        }
       });
+      
+      // Применяем скидку
+      const discountPercent = calculateClientDiscount(client);
+      const discountAmount = discountPercent > 0 ? Math.round(totalPrice * discountPercent / 100) : 0;
+      const finalPrice = totalPrice - discountAmount;
       
       const booking = {
         id: Date.now(),
@@ -1870,22 +2147,22 @@
         time: time,
         phone: client.phone,
         price: totalPrice,
+        discount_applied: discountPercent > 0,
+        discount_percent: discountPercent,
+        discount_amount: discountAmount,
+        final_price: finalPrice,
         status: 'confirmed',
         box_number: boxNumber,
+        duration: totalDuration,
         created_at: new Date().toISOString()
       };
       
       DB.bookings.push(booking);
       saveDB();
       closeModal();
+      updateAllData();
       
-      if (currentUser.role === 'admin') {
-        loadAdminBookings();
-      } else {
-        loadManagerSchedule();
-      }
-      
-      showNotification('Запись добавлена!', `${client.name}, ${time}, Бокс ${boxNumber}`, '✅');
+      showNotification('Запись добавлена!', `${client.name}, ${time}, Бокс ${boxNumber}${discountPercent > 0 ? `, Скидка: ${discountPercent}%` : ''}`, '✅');
     }
 
     function loadClients() {
@@ -1898,11 +2175,13 @@
           const cars = DB.cars.filter(c => c.client_id === client.id);
           const bookings = DB.bookings.filter(b => b.client_id === client.id);
           const lastVisit = bookings.length > 0 ? bookings.sort((a, b) => new Date(b.date) - new Date(a.date))[0].date : 'Нет';
+          const discount = calculateClientDiscount(client);
           
           html += `<div class="card" onclick="viewClientDetails(${client.id})" style="cursor:pointer;">
             <h3 style="text-transform:none;">${client.name}</h3>
             <p style="color:var(--text-secondary);">📞 ${client.phone}</p>
             <p style="color:var(--text-secondary);">🚗 Авто: ${cars.length} | 📅 Последний визит: ${lastVisit}</p>
+            ${discount > 0 ? `<p style="color:var(--success);">💰 Скидка: ${discount}%</p>` : ''}
           </div>`;
         });
       }
@@ -1914,6 +2193,7 @@
       const client = DB.clients.find(c => c.id === clientId);
       if (!client) return;
       
+      const discount = calculateClientDiscount(client);
       const cars = DB.cars.filter(c => c.client_id === clientId);
       const bookings = DB.bookings.filter(b => b.client_id === clientId);
       
@@ -1921,7 +2201,10 @@
         <h2 style="text-transform:none;">${client.name}</h2>
         <div class="card">
           <p style="color:var(--text-secondary);">📞 ${client.phone}</p>
-          <p style="color:var(--text-secondary);">Скидка: ${client.discount_type || 'Нет'}</p>
+          <div style="margin-top:10px;padding:10px;background:rgba(245,166,35,0.1);border-radius:8px;">
+            <p style="font-size:0.9rem;">💰 Скидка: <strong style="color:var(--accent);">${discount}%</strong></p>
+            <p style="font-size:0.8rem;color:var(--text-secondary);">Потрачено всего: ${(client.total_spent || 0).toLocaleString()} ₽</p>
+          </div>
         </div>`;
       
       html += '<h3 style="font-size:1rem;margin:20px 0 10px;">Автомобили</h3>';
@@ -1946,13 +2229,20 @@
         bookings.sort((a, b) => new Date(b.date) - new Date(a.date));
         bookings.forEach(booking => {
           const car = DB.cars.find(c => c.id === booking.car_id);
-          const serviceNames = (booking.service_ids || [booking.service_id]).map(id => {
-            const service = DB.services.find(s => s.id === id);
-            return service ? service.name : 'Услуга';
-          }).join(', ');
+          const serviceNames = getServiceNames(booking);
           
-          const statusText = booking.status === 'completed' ? 'Выполнено' : booking.status === 'cancelled' ? 'Отменено' : 'Ожидает';
-          const statusClass = booking.status === 'completed' ? 'tag-green' : booking.status === 'cancelled' ? 'tag-red' : 'tag-yellow';
+          let statusText = 'Ожидает';
+          let statusClass = 'tag-yellow';
+          if (booking.status === 'completed') {
+            statusText = 'Выполнено';
+            statusClass = 'tag-green';
+          } else if (booking.status === 'cancelled') {
+            statusText = 'Отменено';
+            statusClass = 'tag-red';
+          } else if (booking.status === 'no_show') {
+            statusText = 'Неявка';
+            statusClass = 'tag-red';
+          }
           
           html += `<div class="card">
             <div style="display:flex;justify-content:space-between;">
@@ -1961,8 +2251,8 @@
             </div>
             <p style="color:var(--text-secondary);font-size:0.8rem;">📅 ${booking.date} в ${booking.time}</p>
             ${car ? `<p style="color:var(--text-secondary);font-size:0.8rem;">🚗 ${car.brand} ${car.model}</p>` : ''}
-            ${booking.price ? `<p style="color:var(--accent);">${booking.price.toLocaleString()} ₽</p>` : ''}
-            ${booking.staff_ids ? `<p style="color:var(--text-secondary);font-size:0.7rem;">👥 ${booking.staff_ids.length} детейлера(ов)</p>` : ''}
+            ${booking.discount_applied ? `<p style="color:var(--success);font-size:0.8rem;">💰 Скидка: ${booking.discount_percent}%</p>` : ''}
+            <p style="color:var(--accent);">${(booking.final_price || booking.price).toLocaleString()} ₽</p>
           </div>`;
         });
       }
@@ -1974,21 +2264,40 @@
       const car = DB.cars.find(c => c.id === carId);
       if (!car) return;
       
-      const existingRecs = DB.recommendations.filter(r => r.car_id === carId);
+      const activeRecs = DB.recommendations.filter(r => r.car_id === carId && r.status === 'active');
+      const completedRecs = DB.recommendations.filter(r => r.car_id === carId && r.status === 'completed');
       
       const modal = document.getElementById('modal');
       modal.innerHTML = `
         <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
           <h3 style="color:var(--accent);margin-bottom:20px;">Рекомендации для ${car.brand} ${car.model}</h3>
-          <div style="margin-bottom:20px;">
-            ${existingRecs.length > 0 ? existingRecs.map(rec => `
-              <div class="card">
+          
+          ${activeRecs.length > 0 ? `
+            <h4 style="font-size:0.85rem;margin-bottom:10px;color:var(--accent);">Активные рекомендации:</h4>
+            ${activeRecs.map(rec => `
+              <div class="card" style="margin-bottom:10px;">
                 <p style="text-transform:none;font-size:0.85rem;">💡 ${rec.text}</p>
-                <p style="color:var(--text-secondary);font-size:0.7rem;">${rec.date}</p>
+                <p style="color:var(--text-secondary);font-size:0.7rem;margin-top:5px;">${rec.date}</p>
+                <div style="display:flex;gap:10px;margin-top:10px;">
+                  <button class="btn btn-outline" style="padding:8px;font-size:0.7rem;width:auto;" onclick="completeRecommendation(${rec.id}, ${carId})">✓ Выполнено</button>
+                </div>
               </div>
-            `).join('') : '<p style="color:var(--text-secondary);">Нет рекомендаций</p>'}
-          </div>
-          <div class="input-group">
+            `).join('')}
+          ` : '<p style="color:var(--text-secondary);margin-bottom:20px;">Нет активных рекомендаций</p>'}
+          
+          ${completedRecs.length > 0 ? `
+            <h4 style="font-size:0.85rem;margin:20px 0 10px;color:var(--success);">Выполненные:</h4>
+            ${completedRecs.map(rec => `
+              <div class="card" style="margin-bottom:10px;opacity:0.6;">
+                <p style="text-transform:none;font-size:0.85rem;text-decoration:line-through;">✅ ${rec.text}</p>
+                <p style="color:var(--text-secondary);font-size:0.7rem;margin-top:5px;">${rec.date}</p>
+                <button class="btn btn-outline" style="padding:5px;font-size:0.6rem;width:auto;margin-top:5px;" onclick="reactivateRecommendation(${rec.id}, ${carId})">↺ Вернуть</button>
+              </div>
+            `).join('')}
+          ` : ''}
+          
+          <div class="input-group" style="margin-top:20px;">
             <label>Новая рекомендация</label>
             <textarea class="input-field" id="recommendationText" rows="3" placeholder="Например: предложить полировку кузова"></textarea>
           </div>
@@ -1996,6 +2305,28 @@
           <button class="btn btn-outline" onclick="closeModal()">Закрыть</button>
         </div>`;
       modal.classList.add('active');
+    }
+
+    function completeRecommendation(recId, carId) {
+      const rec = DB.recommendations.find(r => r.id === recId);
+      if (rec) {
+        rec.status = 'completed';
+        rec.completed_at = new Date().toISOString();
+        saveDB();
+        showRecommendations(carId);
+        showNotification('Рекомендация выполнена!', rec.text, '✅');
+      }
+    }
+
+    function reactivateRecommendation(recId, carId) {
+      const rec = DB.recommendations.find(r => r.id === recId);
+      if (rec) {
+        rec.status = 'active';
+        rec.completed_at = null;
+        saveDB();
+        showRecommendations(carId);
+        showNotification('Рекомендация возвращена', rec.text, '↺');
+      }
     }
 
     function saveRecommendation(carId) {
@@ -2007,7 +2338,8 @@
         car_id: carId,
         text: text,
         date: new Date().toISOString().split('T')[0],
-        status: 'active'
+        status: 'active',
+        created_at: new Date().toISOString()
       });
       saveDB();
       closeModal();
@@ -2021,7 +2353,7 @@
       const todayStr = today.toISOString().split('T')[0];
       const todayBookings = DB.bookings.filter(b => b.date === todayStr && b.status === 'completed');
       let todayRevenue = 0;
-      todayBookings.forEach(b => { todayRevenue += b.price || 0; });
+      todayBookings.forEach(b => { todayRevenue += (b.final_price || b.price) || 0; });
       
       let lastFriday = new Date(today);
       let daysSinceFriday = (dayOfWeek + 2) % 7;
@@ -2039,7 +2371,7 @@
       const weekBookings = DB.bookings.filter(b => b.date >= startDate && b.date <= endDate && b.status === 'completed');
       
       let weekRevenue = 0;
-      weekBookings.forEach(b => { weekRevenue += b.price || 0; });
+      weekBookings.forEach(b => { weekRevenue += (b.final_price || b.price) || 0; });
       
       let adminPercent = 5;
       if (weekRevenue >= 20000 && weekRevenue <= 39500) adminPercent = 7;
@@ -2060,7 +2392,7 @@
           <p style="color:var(--text-secondary);margin-top:5px;">Период: ${startDate} — ${endDate}</p>
         </div>
         <div class="card" style="background:rgba(245,166,35,0.1);">
-          <h3>👨‍💼 Администратор (${adminPercent}%)</h3>
+          <h3>👨‍💼 ${currentAdmin ? currentAdmin.name : 'Администратор'} (${adminPercent}%)</h3>
           <p style="font-size:1.5rem;color:var(--accent);font-weight:700;">${adminEarnings.toLocaleString()} ₽</p>
           <p style="color:var(--text-secondary);">Выплата: пятница</p>
         </div>`;
@@ -2072,8 +2404,8 @@
     function setupManagerNav() {
       document.getElementById('bottomNav').innerHTML = `
         <button class="nav-item active" onclick="showManagerScreen('schedule')"><span class="nav-icon">📅</span>График</button>
+        <button class="nav-item" onclick="showManagerScreen('analytics')"><span class="nav-icon">📊</span>Аналитика</button>
         <button class="nav-item" onclick="showManagerScreen('salary')"><span class="nav-icon">💰</span>Зарплаты</button>
-        <button class="nav-item" onclick="showManagerScreen('staff')"><span class="nav-icon">👥</span>Персонал</button>
         <button class="nav-item" onclick="showManagerScreen('inventory')"><span class="nav-icon">📦</span>Склад</button>
       `;
     }
@@ -2085,14 +2417,68 @@
       const navItems = document.querySelectorAll('.nav-item');
       
       if (screen === 'schedule') { navItems[0].classList.add('active'); loadManagerSchedule(); }
-      else if (screen === 'salary') { navItems[1].classList.add('active'); loadSalary(); }
-      else if (screen === 'staff') { navItems[2].classList.add('active'); loadStaff(); }
+      else if (screen === 'analytics') { navItems[1].classList.add('active'); loadAnalytics(); }
+      else if (screen === 'salary') { navItems[2].classList.add('active'); loadSalary(); }
       else if (screen === 'inventory') { navItems[3].classList.add('active'); loadInventoryManager(); }
     }
 
     function loadManagerSchedule() {
       const today = new Date().toISOString().split('T')[0];
       loadBookingsByDate(today, 'manager');
+    }
+
+    function loadAnalytics() {
+      const today = new Date().toISOString().split('T')[0];
+      
+      const todayBookings = DB.bookings.filter(b => b.date === today && b.status === 'completed');
+      const todayCars = todayBookings.length;
+      const todayRevenue = todayBookings.reduce((sum, b) => sum + ((b.final_price || b.price) || 0), 0);
+      const todayAvg = todayCars > 0 ? todayRevenue / todayCars : 0;
+      
+      const weekBookings = DB.bookings.filter(b => {
+        const bookingDate = new Date(b.date);
+        const weekAgo = new Date();
+        weekAgo.setDate(weekAgo.getDate() - 7);
+        return bookingDate >= weekAgo && b.status === 'completed';
+      });
+      const weekCars = weekBookings.length;
+      const weekRevenue = weekBookings.reduce((sum, b) => sum + ((b.final_price || b.price) || 0), 0);
+      const weekAvg = weekCars > 0 ? weekRevenue / weekCars : 0;
+      
+      const monthBookings = DB.bookings.filter(b => {
+        const bookingDate = new Date(b.date);
+        const monthAgo = new Date();
+        monthAgo.setMonth(monthAgo.getMonth() - 1);
+        return bookingDate >= monthAgo && b.status === 'completed';
+      });
+      const monthCars = monthBookings.length;
+      const monthRevenue = monthBookings.reduce((sum, b) => sum + ((b.final_price || b.price) || 0), 0);
+      const monthAvg = monthCars > 0 ? monthRevenue / monthCars : 0;
+      
+      let html = `<h2>Аналитика</h2>
+        
+        <h3 style="font-size:1rem;margin:20px 0 10px;">Сегодня</h3>
+        <div class="card">
+          <p style="color:var(--text-secondary);">🚗 Автомобилей: <strong style="color:var(--text);">${todayCars}</strong></p>
+          <p style="color:var(--text-secondary);">💰 Общая сумма: <strong style="color:var(--accent);">${todayRevenue.toLocaleString()} ₽</strong></p>
+          <p style="color:var(--text-secondary);">📊 Средний чек: <strong style="color:var(--accent);">${todayAvg.toLocaleString()} ₽</strong></p>
+        </div>
+        
+        <h3 style="font-size:1rem;margin:20px 0 10px;">За 7 дней</h3>
+        <div class="card">
+          <p style="color:var(--text-secondary);">🚗 Автомобилей: <strong style="color:var(--text);">${weekCars}</strong></p>
+          <p style="color:var(--text-secondary);">💰 Общая сумма: <strong style="color:var(--accent);">${weekRevenue.toLocaleString()} ₽</strong></p>
+          <p style="color:var(--text-secondary);">📊 Средний чек: <strong style="color:var(--accent);">${weekAvg.toLocaleString()} ₽</strong></p>
+        </div>
+        
+        <h3 style="font-size:1rem;margin:20px 0 10px;">За 30 дней</h3>
+        <div class="card">
+          <p style="color:var(--text-secondary);">🚗 Автомобилей: <strong style="color:var(--text);">${monthCars}</strong></p>
+          <p style="color:var(--text-secondary);">💰 Общая сумма: <strong style="color:var(--accent);">${monthRevenue.toLocaleString()} ₽</strong></p>
+          <p style="color:var(--text-secondary);">📊 Средний чек: <strong style="color:var(--accent);">${monthAvg.toLocaleString()} ₽</strong></p>
+        </div>`;
+      
+      document.getElementById('managerContent').innerHTML = html;
     }
 
     function loadSalary() {
@@ -2118,7 +2504,7 @@
       const weekBookings = DB.bookings.filter(b => b.date >= startDate && b.date <= endDate && b.status === 'completed');
       
       let totalRevenue = 0;
-      weekBookings.forEach(b => { totalRevenue += b.price || 0; });
+      weekBookings.forEach(b => { totalRevenue += (b.final_price || b.price) || 0; });
       
       let adminPercent = 5;
       if (totalRevenue >= 20000 && totalRevenue <= 39500) adminPercent = 7;
@@ -2128,15 +2514,15 @@
       
       const staffStats = {};
       DB.staff.forEach(staff => {
-        staffStats[staff.id] = { name: staff.name, todayEarnings: 0, todayCount: 0, weekEarnings: 0, weekCount: 0 };
+        staffStats[staff.id] = { name: staff.name, todayEarnings: 0, todayCount: 0, weekEarnings: 0, weekCount: 0, isAdmin: currentAdmin && currentAdmin.id === staff.id };
       });
       
       todayBookings.forEach(booking => {
         if (booking.staff_ids && booking.staff_ids.length > 0) {
           const staffCount = booking.staff_ids.length;
-          const amount = (booking.price || 0) * 0.40 / staffCount;
+          const amount = ((booking.final_price || booking.price) || 0) * 0.40 / staffCount;
           booking.staff_ids.forEach(staffId => {
-            if (staffStats[staffId]) {
+            if (staffStats[staffId] && !staffStats[staffId].isAdmin) {
               staffStats[staffId].todayEarnings += amount;
               staffStats[staffId].todayCount += 1;
             }
@@ -2147,9 +2533,9 @@
       weekBookings.forEach(booking => {
         if (booking.staff_ids && booking.staff_ids.length > 0) {
           const staffCount = booking.staff_ids.length;
-          const amount = (booking.price || 0) * 0.40 / staffCount;
+          const amount = ((booking.final_price || booking.price) || 0) * 0.40 / staffCount;
           booking.staff_ids.forEach(staffId => {
-            if (staffStats[staffId]) {
+            if (staffStats[staffId] && !staffStats[staffId].isAdmin) {
               staffStats[staffId].weekEarnings += amount;
               staffStats[staffId].weekCount += 1;
             }
@@ -2166,21 +2552,23 @@
         
         <div class="card" style="border:1px solid var(--accent);">
           <div style="display:flex;justify-content:space-between;">
-            <h3>👨‍💼 Администратор (${adminPercent}%)</h3>
+            <h3>👨‍💼 ${currentAdmin ? currentAdmin.name : 'Администратор'} (${adminPercent}%)</h3>
             <span style="color:var(--accent);font-weight:700;">${adminEarnings.toLocaleString()} ₽</span>
           </div>
           <p style="color:var(--text-secondary);font-size:0.8rem;">За неделю</p>
         </div>`;
       
       Object.values(staffStats).forEach(staff => {
-        html += `<div class="card" onclick="showStaffSalaryDetails('${staff.name}', ${staff.todayEarnings}, ${staff.todayCount}, ${staff.weekEarnings}, ${staff.weekCount})" style="cursor:pointer;">
-          <div style="display:flex;justify-content:space-between;">
-            <h4 style="text-transform:none;">${staff.name}</h4>
-            <span style="color:var(--accent);font-weight:700;">${staff.weekEarnings.toLocaleString()} ₽</span>
-          </div>
-          <p style="color:var(--text-secondary);font-size:0.8rem;">Сегодня: ${staff.todayEarnings.toLocaleString()} ₽ (${staff.todayCount} зап.)</p>
-          <p style="color:var(--text-secondary);font-size:0.8rem;">Неделя: ${staff.weekEarnings.toLocaleString()} ₽ (${staff.weekCount} зап.)</p>
-        </div>`;
+        if (!staff.isAdmin) {
+          html += `<div class="card" onclick="showStaffSalaryDetails('${staff.name}', ${staff.todayEarnings}, ${staff.todayCount}, ${staff.weekEarnings}, ${staff.weekCount})" style="cursor:pointer;">
+            <div style="display:flex;justify-content:space-between;">
+              <h4 style="text-transform:none;">${staff.name}</h4>
+              <span style="color:var(--accent);font-weight:700;">${staff.weekEarnings.toLocaleString()} ₽</span>
+            </div>
+            <p style="color:var(--text-secondary);font-size:0.8rem;">Сегодня: ${staff.todayEarnings.toLocaleString()} ₽ (${staff.todayCount} зап.)</p>
+            <p style="color:var(--text-secondary);font-size:0.8rem;">Неделя: ${staff.weekEarnings.toLocaleString()} ₽ (${staff.weekCount} зап.)</p>
+          </div>`;
+        }
       });
       
       document.getElementById('managerContent').innerHTML = html;
@@ -2192,19 +2580,6 @@
         `Сегодня: ${todayEarnings.toLocaleString()} ₽ (${todayCount} записей)\nЗа неделю: ${weekEarnings.toLocaleString()} ₽ (${weekCount} записей)`,
         '💰'
       );
-    }
-
-    function loadStaff() {
-      let html = '<h2>Персонал</h2>';
-      
-      DB.staff.forEach(staff => {
-        html += `<div class="card">
-          <h4 style="text-transform:none;">${staff.name}</h4>
-          <span class="tag tag-green">${staff.role === 'admin' ? 'Админ' : 'Мойщик'}</span>
-        </div>`;
-      });
-      
-      document.getElementById('managerContent').innerHTML = html;
     }
 
     function loadInventoryManager() {
@@ -2239,6 +2614,7 @@
       const modal = document.getElementById('modal');
       modal.innerHTML = `
         <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
           <h3 style="color:var(--accent);margin-bottom:20px;">Новая позиция</h3>
           <div class="input-group"><label>Название</label><input type="text" class="input-field" id="newItemName"></div>
           <div class="input-group"><label>Количество</label><input type="number" class="input-field" id="newItemStock" min="0"></div>
@@ -2299,6 +2675,7 @@
       const modal = document.getElementById('modal');
       modal.innerHTML = `
         <div class="modal-content">
+          <button class="modal-close-btn" onclick="closeModal()">✕</button>
           <h3 style="color:var(--accent);margin-bottom:20px;">Изменить остаток</h3>
           <div class="card">
             <h4 style="text-transform:none;">${item.name}</h4>
@@ -2334,6 +2711,13 @@
     function closeModal() {
       document.getElementById('modal').classList.remove('active');
     }
+
+    // Обработчик клика по фону модального окна
+    document.getElementById('modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
 
     // ЗАПУСК
     loadDB();
