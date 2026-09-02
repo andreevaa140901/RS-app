@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-Detailing</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: #0a0a0f; 
+      font-family: 'Inter', sans-serif; 
+      color: #fff; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 420px;
+      width: 100%;
+      background: linear-gradient(145deg, #12121a, #1a1a2e);
+      border: 1px solid rgba(245,166,35,0.2);
+      border-radius: 32px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    }
+    .logo {
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #F5A623, #FF4500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #8a8a9a;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border-radius: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #F5A623, #FF4500);
+      color: #000;
+      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+      transition: 0.3s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(245,166,35,0.5);
+      color: #F5A623;
+    }
+    .btn-outline:hover { background: rgba(245,166,35,0.1); }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 16px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .stats div { text-align: center; }
+    .stats .num { font-size: 1.2rem; font-weight: 700; }
+    .stats .label { font-size: 0.65rem; color: #8a8a9a; }
+    .divider { width: 1px; height: 30px; background: rgba(255,255,255,0.08); }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .badge {
+      padding: 6px 14px;
+      background: rgba(245,166,35,0.08);
+      border: 1px solid rgba(245,166,35,0.15);
+      border-radius: 20px;
+      font-size: 0.7rem;
+      color: #8a8a9a;
+      cursor: pointer;
+    }
+    .badge:hover {
+      background: rgba(245,166,35,0.15);
+      border-color: #F5A623;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">RS</div>
+    <p class="subtitle">Профессиональный уход за автомобилем</p>
+    
+    <div class="stats">
+      <div><div class="num">5.0</div><div class="label">⭐ Рейтинг</div></div>
+      <div class="divider"></div>
+      <div><div class="num">100%</div><div class="label">🎯 Качество</div></div>
+      <div class="divider"></div>
+      <div><div class="num">7 лет</div><div class="label">🚀 Опыт</div></div>
+    </div>
+    
+    <button class="btn">📅 Записаться</button>
+    <button class="btn btn-outline">🛠️ Услуги</button>
+    <button class="btn btn-outline">👤 Профиль</button>
+    
+    <div class="badges">
+      <span class="badge">🚗 Мойка</span>
+      <span class="badge">✨ Полировка</span>
+      <span class="badge">🧼 Химчистка</span>
+      <span class="badge">🛡️ Керамика</span>
+    </div>
+  </div>
+</body>
+</html>
