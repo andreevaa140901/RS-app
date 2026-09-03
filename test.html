@@ -45,16 +45,6 @@
         .status-detail {
             padding: 4px 0;
         }
-        pre {
-            background: #000;
-            padding: 10px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-size: 11px;
-            max-height: 200px;
-            overflow-y: auto;
-            margin: 10px 0;
-        }
     </style>
 </head>
 <body>
@@ -78,7 +68,7 @@
         <div id="log" class="log">Готов...</div>
     </div>
 
-    <!-- ПОДКЛЮЧАЕМ СКРИПТЫ (НОВЫЕ ПУТИ!) -->
+    <!-- ✅ ПРАВИЛЬНЫЕ ПУТИ (ФАЙЛЫ В КОРНЕ) -->
     <script src="config.js"></script>
     <script src="datamanager.js"></script>
     
@@ -150,7 +140,6 @@
             logMessage('🚀 Инициализация...', 'info');
             
             try {
-                // Проверяем config.js
                 if (typeof window.DB_CONFIG === 'undefined') {
                     logMessage('❌ config.js не загружен!', 'error');
                     updateStatus(`
@@ -161,7 +150,6 @@
                 }
                 logMessage('✅ config.js загружен', 'success');
 
-                // Проверяем DataManager
                 if (typeof DataManager === 'undefined') {
                     logMessage('❌ DataManager не загружен!', 'error');
                     updateStatus(`
@@ -172,7 +160,6 @@
                 }
                 logMessage('✅ DataManager загружен', 'success');
                 
-                // Создаём экземпляр
                 dataManagerInstance = new DataManager();
                 await dataManagerInstance.initialize();
                 window.dataManager = dataManagerInstance;
