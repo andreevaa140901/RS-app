@@ -45,6 +45,16 @@
         .status-detail {
             padding: 4px 0;
         }
+        pre {
+            background: #000;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 11px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -68,14 +78,12 @@
         <div id="log" class="log">Готов...</div>
     </div>
 
-    <!-- ПОДКЛЮЧАЕМ СКРИПТЫ -->
+    <!-- ПОДКЛЮЧАЕМ СКРИПТЫ (НОВЫЕ ПУТИ!) -->
     <script src="config.js"></script>
-    <script src="src/core/DataManager.js"></script>
+    <script src="datamanager.js"></script>
     
     <script>
-        // Глобальная переменная для DataManager
         let dataManagerInstance = null;
-        let isReady = false;
 
         function logMessage(msg, type = 'info') {
             const log = document.getElementById('log');
@@ -90,8 +98,7 @@
         }
 
         function updateStatus(status) {
-            const statusDiv = document.getElementById('status');
-            statusDiv.innerHTML = status;
+            document.getElementById('status').innerHTML = status;
         }
 
         async function testSync() {
@@ -139,26 +146,35 @@
             }
         }
 
-        // Инициализация
         (async function init() {
             logMessage('🚀 Инициализация...', 'info');
             
             try {
-                // Проверяем, что DataManager определён
+                // Проверяем config.js
+                if (typeof window.DB_CONFIG === 'undefined') {
+                    logMessage('❌ config.js не загружен!', 'error');
+                    updateStatus(`
+                        <div class="status-detail" style="color: #ef4444;">❌ config.js не загружен!</div>
+                        <div class="status-detail">Проверьте файл: config.js</div>
+                    `);
+                    return;
+                }
+                logMessage('✅ config.js загружен', 'success');
+
+                // Проверяем DataManager
                 if (typeof DataManager === 'undefined') {
                     logMessage('❌ DataManager не загружен!', 'error');
                     updateStatus(`
                         <div class="status-detail" style="color: #ef4444;">❌ DataManager не загружен!</div>
-                        <div class="status-detail">Проверьте файл: src/core/DataManager.js</div>
+                        <div class="status-detail">Проверьте файл: datamanager.js</div>
                     `);
                     return;
                 }
+                logMessage('✅ DataManager загружен', 'success');
                 
-                logMessage('✅ DataManager найден!', 'success');
-                
+                // Создаём экземпляр
                 dataManagerInstance = new DataManager();
                 await dataManagerInstance.initialize();
-                
                 window.dataManager = dataManagerInstance;
                 
                 const status = dataManagerInstance.getStatus();
