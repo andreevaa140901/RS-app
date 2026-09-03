@@ -68,9 +68,43 @@
         <div id="log" class="log">Готов...</div>
     </div>
 
-    <!-- ✅ ПОДКЛЮЧАЕМ СКРИПТЫ -->
+    <!-- ЗАГРУЖАЕМ СКРИПТЫ -->
     <script src="config.js"></script>
-    <script src="datamanager.js"></script>
+    
+    <!-- ПРИНУДИТЕЛЬНАЯ ЗАГРУЗКА datamanager.js -->
+    <script>
+        // Функция для загрузки скрипта
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src + '?v=' + Date.now(); // Убираем кэш
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+                console.log('📥 Загружаем:', src);
+            });
+        }
+
+        // Ждём загрузки datamanager.js
+        async function waitForDataManager() {
+            try {
+                // Пытаемся загрузить скрипт
+                await loadScript('datamanager.js');
+                
+                // Ждём, пока DataManager появится
+                let attempts = 0;
+                while (typeof DataManager === 'undefined' && attempts < 20) {
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                    attempts++;
+                }
+                
+                return typeof DataManager !== 'undefined';
+            } catch (error) {
+                console.error('❌ Ошибка загрузки:', error);
+                return false;
+            }
+        }
+    </script>
     
     <script>
         let dataManagerInstance = null;
@@ -136,10 +170,12 @@
             }
         }
 
+        // ГЛАВНАЯ ИНИЦИАЛИЗАЦИЯ
         (async function init() {
             logMessage('🚀 Инициализация...', 'info');
             
             try {
+                // Проверяем config.js
                 if (typeof window.DB_CONFIG === 'undefined') {
                     logMessage('❌ config.js не загружен!', 'error');
                     updateStatus(`
@@ -150,21 +186,20 @@
                 }
                 logMessage('✅ config.js загружен', 'success');
 
-                // Ждём загрузки DataManager
-                let attempts = 0;
-                while (typeof DataManager === 'undefined' && attempts < 10) {
-                    await new Promise(resolve => setTimeout(resolve, 500));
-                    attempts++;
-                }
-
-                if (typeof DataManager === 'undefined') {
-                    logMessage('❌ DataManager не загружен!', 'error');
+                // ПРИНУДИТЕЛЬНО ЗАГРУЖАЕМ datamanager.js
+                logMessage('⏳ Загружаем datamanager.js...', 'info');
+                const loaded = await waitForDataManager();
+                
+                if (!loaded) {
+                    logMessage('❌ DataManager не загрузился после ожидания!', 'error');
                     updateStatus(`
                         <div class="status-detail" style="color: #ef4444;">❌ DataManager не загружен!</div>
                         <div class="status-detail">Проверьте файл: datamanager.js</div>
+                        <div class="status-detail">Попробуйте открыть: <a href="https://rs-detailing-app.ru/datamanager.js" target="_blank">datamanager.js</a></div>
                     `);
                     return;
                 }
+                
                 logMessage('✅ DataManager загружен', 'success');
                 
                 dataManagerInstance = new DataManager();
