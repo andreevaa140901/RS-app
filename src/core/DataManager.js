@@ -169,8 +169,10 @@ class DataManager {
     }
 }
 
+// Регистрируем в глобальном объекте
 if (typeof window !== 'undefined') {
     window.DataManager = DataManager;
+    console.log('✅ DataManager зарегистрирован в window');
 }
 
 export default DataManager;
