@@ -68,7 +68,7 @@
         <div id="log" class="log">Готов...</div>
     </div>
 
-    <!-- ✅ ПРАВИЛЬНЫЕ ПУТИ (ФАЙЛЫ В КОРНЕ) -->
+    <!-- ✅ ПОДКЛЮЧАЕМ СКРИПТЫ -->
     <script src="config.js"></script>
     <script src="datamanager.js"></script>
     
@@ -149,6 +149,13 @@
                     return;
                 }
                 logMessage('✅ config.js загружен', 'success');
+
+                // Ждём загрузки DataManager
+                let attempts = 0;
+                while (typeof DataManager === 'undefined' && attempts < 10) {
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    attempts++;
+                }
 
                 if (typeof DataManager === 'undefined') {
                     logMessage('❌ DataManager не загружен!', 'error');
