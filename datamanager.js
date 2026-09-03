@@ -1,5 +1,4 @@
-// src/core/DataManager.js
-// Работает через API на Reg.ru
+// datamanager.js - Работает через API на Reg.ru
 
 class DataManager {
     constructor() {
@@ -174,5 +173,3 @@ if (typeof window !== 'undefined') {
     window.DataManager = DataManager;
     console.log('✅ DataManager зарегистрирован в window');
 }
-
-export default DataManager;
