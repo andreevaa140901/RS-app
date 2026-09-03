@@ -29,6 +29,10 @@
             cursor: pointer;
             color: #000;
         }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
         .log {
             background: #000;
             padding: 10px;
@@ -38,6 +42,9 @@
             overflow-y: auto;
             font-size: 12px;
         }
+        .status-detail {
+            padding: 4px 0;
+        }
     </style>
 </head>
 <body>
@@ -45,12 +52,14 @@
     
     <div class="card">
         <h3>📊 Статус</h3>
-        <div id="status">⏳ Проверка...</div>
+        <div id="status">
+            <div class="status-detail">⏳ Загрузка...</div>
+        </div>
     </div>
     
     <div class="card">
         <h3>🔄 Синхронизация</h3>
-        <button onclick="testSync()">📤 Синхронизировать данные</button>
+        <button id="syncBtn" onclick="testSync()" disabled>📤 Синхронизировать данные</button>
         <div id="syncResult" style="margin-top:10px;"></div>
     </div>
     
@@ -59,10 +68,15 @@
         <div id="log" class="log">Готов...</div>
     </div>
 
+    <!-- Подключаем скрипты -->
     <script src="config.js"></script>
     <script src="src/core/DataManager.js"></script>
     
     <script>
+        // Глобальная переменная для DataManager
+        let dataManagerInstance = null;
+        let isReady = false;
+
         function logMessage(msg, type = 'info') {
             const log = document.getElementById('log');
             const time = new Date().toLocaleTimeString();
@@ -75,11 +89,25 @@
             log.scrollTop = log.scrollHeight;
         }
 
+        function updateStatus(status) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = status;
+        }
+
         async function testSync() {
+            const btn = document.getElementById('syncBtn');
             const result = document.getElementById('syncResult');
+            
+            btn.disabled = true;
             result.innerHTML = '⏳ Синхронизация...';
             
             try {
+                // Проверяем, что DataManager готов
+                if (!dataManagerInstance) {
+                    throw new Error('DataManager не инициализирован');
+                }
+                
+                // Получаем данные из localStorage
                 const data = JSON.parse(localStorage.getItem('rs_detailing_v24'));
                 
                 if (!data) {
@@ -89,45 +117,69 @@
                 
                 logMessage(`📦 Найдено: ${data.clients?.length || 0} клиентов, ${data.cars?.length || 0} авто, ${data.bookings?.length || 0} записей`);
                 
-                await window.dataManager.saveData(data);
+                // Сохраняем данные через DataManager
+                await dataManagerInstance.saveData(data);
                 
                 result.innerHTML = '✅ Синхронизация запущена!';
                 logMessage('✅ Данные отправлены на синхронизацию', 'success');
                 
+                // Показываем статус через 2 секунды
                 setTimeout(() => {
-                    const status = window.dataManager.getStatus();
-                    document.getElementById('status').innerHTML = `
-                        <div>✅ DataManager готов</div>
-                        <div>🔄 Синхронизация: ${status.syncEnabled ? 'ВКЛЮЧЕНА ✅' : 'ОТКЛЮЧЕНА ⚠️'}</div>
-                        <div>📦 В очереди: ${status.pendingCount}</div>
-                        <div>⚡ В процессе: ${status.isSyncing ? 'ДА' : 'НЕТ'}</div>
-                        <div>📡 API: ${status.apiUrl}</div>
-                    `;
+                    const status = dataManagerInstance.getStatus();
+                    updateStatus(`
+                        <div class="status-detail">✅ DataManager готов</div>
+                        <div class="status-detail">🔄 Синхронизация: ${status.syncEnabled ? 'ВКЛЮЧЕНА ✅' : 'ОТКЛЮЧЕНА ⚠️'}</div>
+                        <div class="status-detail">📦 В очереди: ${status.pendingCount}</div>
+                        <div class="status-detail">⚡ В процессе: ${status.isSyncing ? 'ДА' : 'НЕТ'}</div>
+                        <div class="status-detail">📡 API: ${status.apiUrl || 'не указан'}</div>
+                    `);
                 }, 2000);
                 
             } catch (error) {
                 result.innerHTML = '❌ Ошибка: ' + error.message;
                 logMessage('❌ Ошибка: ' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
             }
         }
 
+        // Инициализация
         (async function init() {
             logMessage('🚀 Инициализация...', 'info');
             
-            const dataManager = new DataManager();
-            await dataManager.initialize();
-            window.dataManager = dataManager;
-            
-            const status = dataManager.getStatus();
-            document.getElementById('status').innerHTML = `
-                <div>✅ DataManager готов</div>
-                <div>🔄 Синхронизация: ${status.syncEnabled ? 'ВКЛЮЧЕНА ✅' : 'ОТКЛЮЧЕНА ⚠️'}</div>
-                <div>📦 В очереди: ${status.pendingCount}</div>
-                <div>⚡ В процессе: ${status.isSyncing ? 'ДА' : 'НЕТ'}</div>
-                <div>📡 API: ${status.apiUrl}</div>
-            `;
-            
-            logMessage(status.syncEnabled ? '✅ Синхронизация включена' : '⚠️ Синхронизация отключена', status.syncEnabled ? 'success' : 'error');
+            try {
+                // Проверяем, что DataManager определён
+                if (typeof DataManager === 'undefined') {
+                    throw new Error('DataManager не загружен! Проверьте файл src/core/DataManager.js');
+                }
+                
+                // Создаём экземпляр
+                dataManagerInstance = new DataManager();
+                await dataManagerInstance.initialize();
+                
+                // Сохраняем в глобальную переменную для совместимости
+                window.dataManager = dataManagerInstance;
+                
+                const status = dataManagerInstance.getStatus();
+                updateStatus(`
+                    <div class="status-detail">✅ DataManager готов</div>
+                    <div class="status-detail">🔄 Синхронизация: ${status.syncEnabled ? 'ВКЛЮЧЕНА ✅' : 'ОТКЛЮЧЕНА ⚠️'}</div>
+                    <div class="status-detail">📦 В очереди: ${status.pendingCount}</div>
+                    <div class="status-detail">⚡ В процессе: ${status.isSyncing ? 'ДА' : 'НЕТ'}</div>
+                    <div class="status-detail">📡 API: ${status.apiUrl || 'не указан'}</div>
+                `);
+                
+                logMessage(status.syncEnabled ? '✅ Синхронизация включена' : '⚠️ Синхронизация отключена', status.syncEnabled ? 'success' : 'error');
+                
+                // Включаем кнопку
+                document.getElementById('syncBtn').disabled = false;
+                
+            } catch (error) {
+                logMessage('❌ Критическая ошибка: ' + error.message, 'error');
+                updateStatus(`
+                    <div class="status-detail" style="color: #ef4444;">❌ Ошибка: ${error.message}</div>
+                `);
+            }
         })();
     </script>
 </body>
