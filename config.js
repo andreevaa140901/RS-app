@@ -1,5 +1,4 @@
-// config.js - Конфигурация для RS-Detailing
-
+// config.js
 window.DB_CONFIG = {
     local: {
         key: 'rs_detailing_v24'
@@ -8,6 +7,3 @@ window.DB_CONFIG = {
         url: 'https://rs-detailing-app.ru/api.php'
     }
 };
-
-console.log('✅ Конфигурация загружена');
-console.log('📡 API URL:', window.DB_CONFIG.api.url);
