@@ -68,7 +68,7 @@
         <div id="log" class="log">Готов...</div>
     </div>
 
-    <!-- Подключаем скрипты -->
+    <!-- ПОДКЛЮЧАЕМ СКРИПТЫ -->
     <script src="config.js"></script>
     <script src="src/core/DataManager.js"></script>
     
@@ -102,12 +102,10 @@
             result.innerHTML = '⏳ Синхронизация...';
             
             try {
-                // Проверяем, что DataManager готов
                 if (!dataManagerInstance) {
                     throw new Error('DataManager не инициализирован');
                 }
                 
-                // Получаем данные из localStorage
                 const data = JSON.parse(localStorage.getItem('rs_detailing_v24'));
                 
                 if (!data) {
@@ -117,13 +115,11 @@
                 
                 logMessage(`📦 Найдено: ${data.clients?.length || 0} клиентов, ${data.cars?.length || 0} авто, ${data.bookings?.length || 0} записей`);
                 
-                // Сохраняем данные через DataManager
                 await dataManagerInstance.saveData(data);
                 
                 result.innerHTML = '✅ Синхронизация запущена!';
                 logMessage('✅ Данные отправлены на синхронизацию', 'success');
                 
-                // Показываем статус через 2 секунды
                 setTimeout(() => {
                     const status = dataManagerInstance.getStatus();
                     updateStatus(`
@@ -150,14 +146,19 @@
             try {
                 // Проверяем, что DataManager определён
                 if (typeof DataManager === 'undefined') {
-                    throw new Error('DataManager не загружен! Проверьте файл src/core/DataManager.js');
+                    logMessage('❌ DataManager не загружен!', 'error');
+                    updateStatus(`
+                        <div class="status-detail" style="color: #ef4444;">❌ DataManager не загружен!</div>
+                        <div class="status-detail">Проверьте файл: src/core/DataManager.js</div>
+                    `);
+                    return;
                 }
                 
-                // Создаём экземпляр
+                logMessage('✅ DataManager найден!', 'success');
+                
                 dataManagerInstance = new DataManager();
                 await dataManagerInstance.initialize();
                 
-                // Сохраняем в глобальную переменную для совместимости
                 window.dataManager = dataManagerInstance;
                 
                 const status = dataManagerInstance.getStatus();
@@ -171,7 +172,6 @@
                 
                 logMessage(status.syncEnabled ? '✅ Синхронизация включена' : '⚠️ Синхронизация отключена', status.syncEnabled ? 'success' : 'error');
                 
-                // Включаем кнопку
                 document.getElementById('syncBtn').disabled = false;
                 
             } catch (error) {
